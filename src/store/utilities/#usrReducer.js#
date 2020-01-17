@@ -17,6 +17,6 @@ export const updateUserThunk = (user) => (dispatch) => {
 
 function fetchUser(user) {
     return {
-
+	type
     }
 }

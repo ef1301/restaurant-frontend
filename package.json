@@ -1,0 +1,26 @@
+{
+  "name": "restaurant-frontend",
+  "version": "1.0.0",
+  "description": "CUNY TTP Capstone Project",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-redux": "^7.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ef1301/restaurant-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ef1301/restaurant-frontend/issues"
+  },
+  "homepage": "https://github.com/ef1301/restaurant-frontend#readme"
+}

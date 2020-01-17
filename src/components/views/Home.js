@@ -11,15 +11,15 @@ class Home extends Component {
 
 
     }
-    
+    //This page references the Restaurant View
     render() {
     return(       
     <div>
         <title> Restaurant Name </title>
         <div class="navbar">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Settings</a>
+            <a href="#">Account Info</a>
+            <a href="#">Cart</a>
         </div>
     </div>
     );

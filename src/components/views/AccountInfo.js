@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
 import Navbar from './Navbar';
+import '../styles/Account.css';
 
 class AccountInfo extends Component{
     constructor(props) {
@@ -111,10 +112,19 @@ class AccountInfo extends Component{
 
     render() {
 	return (
+		<div>
+		<Navbar />
 		<div className="container">
-		{/*<Navbar />*/}
-	    {this.formRender()}
+		{this.formRender()}
+
+	    	<div id="progress-bar">
+		<div id="reward-status">
+		</div>
+		</div>
+
+	    
 	    </div>
+		</div>
 	);
     }
 };

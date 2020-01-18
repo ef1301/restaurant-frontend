@@ -1,0 +1,24 @@
+ul {
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2A3B50;
+}
+
+
+
+.home {
+
+}
+
+#right-align {
+    right: 0;
+}
+
+
+a:hover:not(.active) {
+    background-color: #7B9AAB;
+  }

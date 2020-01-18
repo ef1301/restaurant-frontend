@@ -17,7 +17,7 @@ class App extends Component {
 	    <Router>
 	    <Switch>
 		<Route exact path="/" render={() => <Home/>} />
-		<Route exact path="/AccountInf/o" render={() => <AccountInfo/>} />		
+		<Route exact path="/AccountInfo" render={() => <AccountInfo/>} />		
 	    </Switch>
 		</Router>
 	);

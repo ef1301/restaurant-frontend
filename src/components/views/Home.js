@@ -20,11 +20,7 @@ class Home extends Component {
     <div class="header">
     <h1>Restaurant Name</h1>
     </div>
-    <div class="navbar">
-    <a href="#" class="active">Home</a>
-    <a href="#">Account</a>
-    <a href="#" class="right">Cart</a>
-    </div>
+   
     <body>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

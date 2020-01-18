@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css'
+import Navbar from './Navbar';
 class Home extends Component {
     constructor() {
 	super();
@@ -17,11 +18,11 @@ class Home extends Component {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         </head>
+        <body>
     <div class="header">
     <h1>Restaurant Name</h1>
     </div>
-   
-    <body>
+    <Navbar />
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -51,11 +52,12 @@ class Home extends Component {
     </a>
         <script src="script.js"></script>
     </div>
-    </body>
+    
     <div class="footer">
     <h2>Footer</h2>
     </div>
-    </div>
+    
+    </body></div>
 }   
 }
 

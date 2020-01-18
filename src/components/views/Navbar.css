@@ -1,12 +1,12 @@
 
 ul{
-    list-style-type: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #2A3B50;
 }
-li{
+.home{
     float:left;
     display: block;
     color: white;
@@ -14,10 +14,10 @@ li{
     padding: 14px 16px;
     text-decoration: none;
 }
-.campuses{
+.account{
     float: right;
     color: white;
-    width: 120px;
+    width: 100px;
 }
 
 

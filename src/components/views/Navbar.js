@@ -10,7 +10,7 @@ class Navbar extends Component{
             <div className="navbar">
             <ul>
             <Link to ="/">
-               <li>Home</li>
+               <li className="home">Home</li>
             </Link>
             <Link to="/">
                 <li className="account">
@@ -18,7 +18,7 @@ class Navbar extends Component{
                 </li>
             </Link>
             <Link to ="/AccountInfo">
-                <li className="cart">
+                <li className="account">
                     Cart
                 </li>
             </Link>

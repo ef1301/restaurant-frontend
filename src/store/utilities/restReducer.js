@@ -17,7 +17,10 @@ function restReducer(state = [], action) {
     switch(action.type) {
     case FETCH_RESTAURANT:
 	return action.restaurant; //RETURNS THE RESTAURANT
+    default:
+	return state;
     }
 }
+
 
 export default restReducer;

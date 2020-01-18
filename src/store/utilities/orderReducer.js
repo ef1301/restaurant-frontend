@@ -20,14 +20,14 @@ export const updateOrderThunk = (order) => (dispatch) => {
     dispatch(resolvedActionObject);
 }
 
-export const removeOrderThunk = (id) => (dispatch) => {
-    let resolvedActionObject = removeOrder(id);
+export const deleteOrderThunk = (id) => (dispatch) => {
+    let resolvedActionObject = deleteOrder(id);
     dispatch(resolvedActionObject);
 }
 
 function fetchOrders(order) {
     return {
-	type: FETCH_ORDER,
+	type: FETCH_ORDERS,
 	order
     }
 }
@@ -71,3 +71,5 @@ function orderReducer(state = [], action) {
 	return state;
     }
 }
+
+export default orderReducer;

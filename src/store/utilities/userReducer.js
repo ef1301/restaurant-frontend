@@ -37,7 +37,10 @@ function userReducer(state = [], action) {
 	    if(item.id === action.user.id)
 		return Object.assign( {}, item, action.order);
 	    else return item;
-	}
+	});
+    default:
+	return state;
+	
     }
 }
 

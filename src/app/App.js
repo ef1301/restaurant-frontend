@@ -6,15 +6,19 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 //Imports for components
+import Home from '../components/views/Home';
 import AccountInfo from '../components/views/AccountInfo';
 
 
 class App extends Component {
     render() {
 	return (
-		<div className="App">
-
-		</div>
+		<Router>
+		<Switch>
+		<Route exact path="/" render={<Home/>}/>
+		<Route exact path="/AccountInfo" render={<AccountInfo/>}/>		
+		</Switch>
+		</Router>
 	);
     }
 }

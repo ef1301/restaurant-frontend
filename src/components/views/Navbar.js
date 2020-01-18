@@ -17,7 +17,7 @@ class Navbar extends Component{
                     Account
                 </li>
             </Link>
-            <Link to ="/">
+            <Link to ="/AccountInfo">
                 <li className="cart">
                     Cart
                 </li>

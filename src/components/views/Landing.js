@@ -6,6 +6,7 @@ class Landing extends Component{
         super();
     }
     render(){
+        return(
         <div className="wrapper">
             <Navbar />
             <div className="header">
@@ -20,6 +21,7 @@ class Landing extends Component{
                 </Link>
             </div>
         </div>
+        ); 
     }
 }
 

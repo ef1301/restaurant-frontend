@@ -13,11 +13,12 @@ import AccountInfo from '../components/views/AccountInfo';
 class App extends Component {
     render() {
 	return (
-		<Router>
-		<Switch>
-		<Route exact path="/" render={<Home/>}/>
-		<Route exact path="/AccountInfo" render={<AccountInfo/>}/>		
-		</Switch>
+	    
+	    <Router>
+	    <Switch>
+		<Route exact path="/" render={() => <Home/>} />
+		<Route exact path="/AccountInf/o" render={() => <AccountInfo/>} />		
+	    </Switch>
 		</Router>
 	);
     }

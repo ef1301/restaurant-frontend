@@ -6,13 +6,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 //Imports for components
-
+import AccountInfo from '../components/views/AccountInfo';
 
 
 class App extends Component {
     render() {
 	return (
 		<div className="App">
+
 		</div>
 	);
     }

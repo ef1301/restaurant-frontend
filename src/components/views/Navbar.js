@@ -9,10 +9,10 @@ class Navbar extends Component{
     return (
         <div className="navbar">
         <Link to="/">Home</Link>
-
+    
         <div id="right-align">
             <Link to="/AccountInfo">Account</Link>
-            <Link to="/">Cart</Link>
+            <Link to="/Cart">Cart</Link>
             <Link to="/SignOut"> Sign Out </Link>
         </div>
         </div>
@@ -21,3 +21,4 @@ class Navbar extends Component{
 }
 
 export default Navbar;
+//Added link to Cart

@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 //Imports for components
 import Home from '../components/views/Home';
 import AccountInfo from '../components/views/AccountInfo';
-
+//Added for cart view
+import Cart from '../components/views/Cart'; 
 
 class App extends Component {
     render() {
@@ -18,7 +19,8 @@ class App extends Component {
 	    <Router>
             <Switch>
                 <Route exact path="/" render={() => <Home/>} />
-                <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />		
+                <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />
+                <Route exact path="/Cart" render={() => <Cart />} />		
             </Switch>
 		</Router>
 	);

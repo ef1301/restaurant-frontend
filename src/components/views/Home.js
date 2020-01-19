@@ -29,7 +29,7 @@ class Home extends Component {
 		<div id="menu">
 		{this.props.menu.map( (item) => (
 			<div className="menu-card" key={item.id}>
-			<img style={{height:5%}{object-fit: cover}} src={item.imageUrl} alt={item.item}/>
+			<img style={{height:50}} src={item.imageUrl} alt={item.item}/>
 			<label>{item.item}</label>
 			<input type="number" style={{width:70}}></input>
 

@@ -12,6 +12,7 @@ import AccountInfo from '../components/views/AccountInfo';
 
 class App extends Component {
     render() {
+	console.log(this.props.menu);
 	return (
 	    
 	    <Router>
@@ -25,11 +26,13 @@ class App extends Component {
 }
 
 function mapState(state) {
-    return { };
+    return {
+	menu: state.menu
+    };
 }
 
 function mapDispatch(dispatch) {
     return { };
 }
 
-export default connect(null,null)(App);
+export default connect(mapState,null)(App);

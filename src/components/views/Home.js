@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import '../styles/Home.css'
 import Navbar from './Navbar';
+import { fetchMenuThunk } from '../../thunks';
+import { connect } from 'react-redux';
+
+
 class Home extends Component {
-    constructor() {
-	super();
+    constructor(props) {
+	super(props);
     }
 
     componentDidMount() {
-
+	this.props.fetchMenu();
+	console.log(this.props.menu);
     }
     
     render() {
+	console.log(this.props.menu);
 	return(
 		<div>
 		<Navbar />
@@ -21,15 +27,16 @@ class Home extends Component {
 		</div>
 
 		<div id="menu">
-		{/*
-		   array.map( (item) => {
-		   <div className="menu-card" key={order_id}>
-		   <span><h2>{menu.item}</h2> <input type="number" min=0><img src="someIcon" alt="Cart"/></span>
-		   <img src="someUrl" alt="food"/>
-		   </div>
-		   }
-		   
-		 */}
+		{this.props.menu.map( (item) => (
+			<div className="menu-card" key={item.id}>
+			<img style={{height:5%}{object-fit: cover}} src={item.imageUrl} alt={item.item}/>
+			<label>{item.item}</label>
+			<input type="number" style={{width:70}}></input>
+
+			<img src="https://img.icons8.com/clouds/100/000000/shopping-cart-promotion.png" alt="cart"/>
+			</div>
+		))}
+		 
 	    </div>
 		
             </div>
@@ -37,4 +44,16 @@ class Home extends Component {
     }   
 }
 
-export default Home;
+function mapState(state){
+    return {
+	menu: state.menu
+    }
+}
+
+function mapDispatch(dispatch, ownProps) {
+    return {
+	fetchMenu: () => dispatch(fetchMenuThunk())
+    }
+}
+
+export default connect(mapState, mapDispatch)(Home);

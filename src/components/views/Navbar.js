@@ -6,15 +6,16 @@ class Navbar extends Component{
         super();
     }
     render(){
-        return(
-		<div className="navbar">
-		<Link to ="/">Home</Link>
+    return (
+        <div className="navbar">
+        <Link to="/">Home</Link>
 
-		<div id="right-align">
-		<Link to="/AccountInfo">Account</Link>
-		<Link to ="/">Cart</Link>
-		</div>
-            </div>
+        <div id="right-align">
+            <Link to="/AccountInfo">Account</Link>
+            <Link to="/">Cart</Link>
+            <Link to="/SignOut"> Sign Out </Link>
+        </div>
+        </div>
         );
     }
 }

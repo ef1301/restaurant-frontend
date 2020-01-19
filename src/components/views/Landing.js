@@ -14,10 +14,10 @@ class Landing extends Component{
             </div>
             <div className="option">
                 <Link to="/">
-                <button type="submit" className="sign-up">Sign Up</button>
+                    <button type="submit" className="sign-up">Sign Up</button>
                 </Link>
                 <Link to="/">
-                <button type="submit" className="log-in">Log In</button>
+                    <button type="submit" className="log-in">Log In</button>
                 </Link>
             </div>
         </div>

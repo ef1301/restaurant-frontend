@@ -1,3 +1,6 @@
+body {
+}
+
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -20,8 +23,47 @@
   float: right;
 }
 
+#menu {
+    text-align: center;
+}
+
 .menu-card {
-    margin: 5%;
+    border-radius: 10px;
+    box-shadow: 5px 5px #2d3d31;
     display: inline-block;
-    width: auto;
+    width: 25%;
+    background-color: #696965;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    height: 33vw;
+    margin-right: 3%;
+    margin-left: 3%;
+    padding: 2% 2%;
+}
+
+h3 {
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+input {
+    font-size: 1.5em;
+    width: 2.5vw;
+    margin: .5%;
+}
+
+.bottom-right {
+    padding: 1%;
+    width: 60%;
+    margin-top: 8%;
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
+
+.crop {
+    border: medium solid #2d3d31;
+    object-fit: cover;
+    height: 20vw;
+    width: 20vw;
 }

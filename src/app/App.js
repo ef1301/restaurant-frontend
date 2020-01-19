@@ -8,28 +8,33 @@ import { Link } from 'react-router-dom';
 //Imports for components
 import Home from '../components/views/Home';
 import AccountInfo from '../components/views/AccountInfo';
-
+//Added for cart view
+import Cart from '../components/views/Cart'; 
 
 class App extends Component {
     render() {
+	console.log(this.props.menu);
 	return (
 	    
 	    <Router>
-	    <Switch>
-		<Route exact path="/" render={() => <Home/>} />
-		<Route exact path="/AccountInf/o" render={() => <AccountInfo/>} />		
-	    </Switch>
+            <Switch>
+                <Route exact path="/" render={() => <Home/>} />
+                <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />
+                <Route exact path="/Cart" render={() => <Cart />} />		
+            </Switch>
 		</Router>
 	);
     }
 }
 
 function mapState(state) {
-    return { };
+    return {
+	menu: state.menu
+    };
 }
 
 function mapDispatch(dispatch) {
     return { };
 }
 
-export default connect(null,null)(App);
+export default connect(mapState,null)(App);

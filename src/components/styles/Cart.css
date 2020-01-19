@@ -1,0 +1,21 @@
+h1
+{
+    text-align: center;
+}
+
+.card
+{
+    background: "light"; 
+    width: '18rem'; 
+}    
+
+.card-body
+{
+    text-align: center;
+    padding: 20px ;
+}
+
+.listgroup-quanity
+{
+    text-align: center;
+}

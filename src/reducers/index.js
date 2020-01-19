@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     users: userReducer,
     restaurants: restReducer,
     orders: orderReducer,
-    menus: menuReducer
+    menu: menuReducer
 })
 
 export default rootReducer;

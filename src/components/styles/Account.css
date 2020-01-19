@@ -1,0 +1,11 @@
+.container {
+    padding: 5%;
+}
+
+#progress-bar {
+    width: 90%;
+}
+
+#reward-status {
+    background-color: green;
+}

@@ -9,8 +9,12 @@ class Signin extends Component {
             redirect : false
         }
     } 
+    //Just added a div tag inside "return()" to eliminate an error on console
     render() {
-        return()
+        return(
+        <div>
+
+        </div>);
     }
 }
 

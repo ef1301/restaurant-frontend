@@ -4,6 +4,7 @@ function MenuItems(props) {
     return (
 	<div id="menu">
 	  <h1>MENU<img id='menu-icon' src="https://img.icons8.com/color/48/000000/restaurant-menu.png"/></h1>
+	  
 	  {props.menu.map( (item) => (
 	      <div className="menu-card" key={item.id}>
 		<h3>{item.item}</h3>
@@ -16,6 +17,7 @@ function MenuItems(props) {
 		  <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></div>
 	      </div>
 	  ))}
+	
     	</div>);
 }
 

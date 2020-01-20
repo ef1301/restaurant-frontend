@@ -43,30 +43,24 @@ class Cart extends Component {
       else{
 	  return <CartList cart={this.props.cart}/>
       }
-}
+  }
 
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <h1> CART </h1>
-        <div className="back-button">
-          <Link
-            to="/"
-            style={{
-              fontSize: "18px",
-              textDecoration: "none",
-              color: "white"
-            }}
-          >
-            Back
-          </Link>
-        </div>
-        {this.cardRender()}
-        <Button className="place-order" variant="primary" size="lg">
-          <Link to="/Checkout"> Next </Link>
-        </Button>
-      </div>
+    render() {
+	return (
+		<div>
+		<Navbar />
+		<div className="container">
+		<h1> CART </h1>
+		<div className="back-button">
+		<Link to="/">Back</Link>
+		</div>
+		{this.cardRender()}
+		<Button className="place-order" variant="primary" size="lg">
+		<Link to="/Checkout"> Next </Link>
+		</Button>
+		</div>
+		</div>
+		
     );
   }
 } 

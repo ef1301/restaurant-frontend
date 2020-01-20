@@ -26,7 +26,8 @@ h1{
     color: #555A5D;
 }
 .amount{
-    width: 60px;
+    font-size: 1.25em;
+    width: 2em;
     text-align: center;
 }
 .menu-card {
@@ -69,4 +70,8 @@ input {
     object-fit: cover;
     height: 20vw;
     width: 20vw;
+}
+
+p {
+    font-size: 1.25em;
 }

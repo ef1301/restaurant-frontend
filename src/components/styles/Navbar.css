@@ -8,17 +8,18 @@ ul {
     background-color: #2A3B50;
 }
 
-
-
-.home {
-
+.navbar {
+    background-color: #2E6F88;
+    padding: 0px;
+    font-family: 'Raleway', sans-serif;
 }
 
 #right-align {
     right: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 
 a:hover:not(.active) {
-    background-color: #7B9AAB;
+    background-color: #67B4BF;
   }

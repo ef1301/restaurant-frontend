@@ -10,7 +10,7 @@ class Landing extends Component{
         <div className="wrapper">
             <Navbar />
             <div className="header">
-                <h1>Welcome to "RESTAURANT NAME"</h1>
+                <h1>Welcome to Byte Me</h1>
             </div>
             <div className="option">
                 <Link to="/">

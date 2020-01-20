@@ -100,11 +100,12 @@ class AccountInfo extends Component{
 	    );
 	}
 	else {
-	    return(<div>
-		   Name:
-		   Phone Number:
-		   Address:
-		   <button variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
+	    return(<div className="info">
+			<h1 className="account">Account Information</h1>
+		   <h2 className="name"> Name: </h2>
+		   <h2 className="num">Phone Number: </h2>
+		   <h2 className="add">Address: </h2>
+		   <button className="edit" variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
 		   </div>
 		  );
 	}

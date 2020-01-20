@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
 import Navbar from './Navbar';
 import '../styles/Account.css';
+import ProgressBar from './Reward';
 
 class AccountInfo extends Component{
     constructor(props) {
@@ -170,8 +171,7 @@ class AccountInfo extends Component{
 		<div className="rewards">
 		<h3>Rewards</h3>
 	    	<div id="progress-bar">
-		<div id="reward-status" style={{width: '10%'}}>
-		<p>10%</p>
+		<ProgressBar />
 		</div>
 		
 		</div>
@@ -181,7 +181,7 @@ class AccountInfo extends Component{
 
 	    
 	    </div>
-		</div>
+		
 	);
     }
 };

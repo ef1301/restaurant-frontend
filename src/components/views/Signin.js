@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Signin.css';
+//import '../styles/Signin.css';
 import { Form, Col, Button } from 'react-bootstrap';
 
 class Signin extends Component {

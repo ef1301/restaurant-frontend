@@ -10,6 +10,7 @@ import Home from '../components/containers/Home';
 import AccountInfo from '../components/containers/AccountInfo';
 import Signin from '../components/containers/Signin';
 import Cart from '../components/containers/Cart'; 
+import Checkout from '../components/views/Checkout';
 
 class App extends Component {
     constructor(props) {
@@ -31,16 +32,16 @@ class App extends Component {
     render() {
 	console.log(this.props.menu);
 	return (
-	    
-		<Router>
-		<Switch>
-		{this.login()}
-                <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />
-                <Route exact path="/Cart" render={() => <Cart />} />
-		<Route exact path="/Signin" render={() => <Signin />} />
-		</Switch>
-		</Router>
-	);
+    <Router>
+      <Switch>
+        {this.login()}
+        <Route exact path="/AccountInfo" render={() => <AccountInfo />} />
+        <Route exact path="/Cart" render={() => <Cart />} />
+        <Route exact path="/Checkout" render={() => <Checkout />} />
+        <Route exact path="/Signin" render={() => <Signin />} />
+      </Switch>
+    </Router>
+  );
     }
 }
 

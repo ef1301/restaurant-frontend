@@ -14,6 +14,7 @@ class Cart extends Component {
             description: 'This food is delicious',
             quantity: 1,
         }
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -35,6 +36,18 @@ class Cart extends Component {
     //     }
     // }
 
+    handleChange(event) {
+        if(event.target.value>=1)
+        {
+            this.setState({ quantity: event.target.value });
+        }
+        else
+        {
+            alert('Your quantity must be 1 or higher'); 
+        }
+    }
+
+
     render() {
 
         return(
@@ -52,7 +65,7 @@ class Cart extends Component {
                         <ListGroupItem>Quantity: {this.state.quantity}</ListGroupItem>
                     </ListGroup>
                     <Card.Body className="card-body">  
-                        <input type="number" width="4vw" placeholder="1"></input>
+                        <input type="number" width="4vw" fontSize="14px" placeholder={this.state.quantity} onChange={this.handleChange}></input>
                         <Button variant="outline-danger">Remove</Button>
                     </Card.Body>
                 </Card>

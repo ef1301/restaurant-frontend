@@ -1,11 +1,12 @@
 h1
 {
     text-align: center;
+    margin-top: 2em;
 }
 
 .card
 {
-    background: "light"; 
+    background: "light";
     width: '18rem'; 
 }    
 
@@ -18,4 +19,23 @@ h1
 .listgroup-quanity
 {
     text-align: center;
+}
+
+.back-button
+{
+    float: none;
+    display: inline-block;
+    border-style: groove;
+    border-color: #007BFF;
+    background-color: #007BFF;
+    border-radius: 5px;
+    padding: 9px;
+    text-decoration: none;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.place-order
+{
+    float: right;
 }

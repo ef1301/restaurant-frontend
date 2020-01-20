@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 import Home from '../components/containers/Home';
 import AccountInfo from '../components/views/AccountInfo';
 import Signin from '../components/views/Signin';
-//Added for cart view
 import Cart from '../components/views/Cart'; 
+import Checkout from '../components/views/Checkout';
 
 class App extends Component {
     constructor(props) {
@@ -32,16 +32,16 @@ class App extends Component {
     render() {
 	console.log(this.props.menu);
 	return (
-	    
-		<Router>
-		<Switch>
-		{this.login()}
-                <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />
-                <Route exact path="/Cart" render={() => <Cart />} />
-		<Route exact path="/Signin" render={() => <Signin />} />
-		</Switch>
-		</Router>
-	);
+    <Router>
+      <Switch>
+        {this.login()}
+        <Route exact path="/AccountInfo" render={() => <AccountInfo />} />
+        <Route exact path="/Cart" render={() => <Cart />} />
+        <Route exact path="/Checkout" render={() => <Checkout />} />
+        <Route exact path="/Signin" render={() => <Signin />} />
+      </Switch>
+    </Router>
+  );
     }
 }
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Card, ListGroup, ListGroupItem, Button, Jumbotron, Container } from 'react-bootstrap';
 import Navbar from './Navbar';
+import Checkout from './Checkout';
 import '../styles/Cart.css';
 import { Link } from 'react-router-dom';
 import { fetchCartThunk, addItemThunk } from "../../thunks";
-//Connect Home Page data with data stored in cartReducer
 import { connect } from 'react-redux'
 
 class Cart extends Component {
@@ -74,7 +74,6 @@ class Cart extends Component {
       <div>
         <Navbar />
         <h1> CART </h1>
-        
         <div className="back-button">
           <Link
             to="/"
@@ -89,7 +88,7 @@ class Cart extends Component {
         </div>
         {this.cardRender()}
         <Button className="place-order" variant="primary" size="lg">
-          Place Order
+          <Link to="/Checkout"> Next </Link>
         </Button>
       </div>
     );

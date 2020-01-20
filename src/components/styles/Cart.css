@@ -1,11 +1,12 @@
 h1
 {
     text-align: center;
+    margin-top: 2em;
 }
 
 .card
 {
-    background: "light"; 
+    background: "light";
     width: '18rem'; 
 }    
 

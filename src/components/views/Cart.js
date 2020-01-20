@@ -52,7 +52,7 @@ class Cart extends Component {
                         <ListGroupItem>Quantity: {this.state.quantity}</ListGroupItem>
                     </ListGroup>
                     <Card.Body className="card-body">  
-                        <input type="number"></input>
+                        <input type="number" width="4vw" placeholder="1"></input>
                         <Button variant="outline-danger">Remove</Button>
                     </Card.Body>
                 </Card>

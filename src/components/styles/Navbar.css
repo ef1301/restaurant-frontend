@@ -23,10 +23,10 @@ ul {
 a:hover:not(.active) {
     background-color: #2E6F88;
   }
-p{
+.company{
     text-align: center;
     color: #555A5D;
-    margin-left: 150px; 
+    margin-left: 160px; 
     font-size: 20px; 
-   
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
 }

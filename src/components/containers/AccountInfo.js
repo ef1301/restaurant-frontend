@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
-import Navbar from './Navbar';
+import Navbar from '../views/Navbar';
 import '../styles/Account.css';
-import ProgressBar from './Reward';
+import ProgressBar from '../views/Reward';
 
 class AccountInfo extends Component{
     constructor(props) {

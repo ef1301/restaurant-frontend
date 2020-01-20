@@ -10,7 +10,7 @@ function CartList(props) {
 		    <div className="menu-card" key={item.id}>
 		      <h3>{item.item}</h3>
 		      <img className="crop"src={item.imageUrl} alt={item.item}/>
-		      <p style={{textAlign:'left', marginLeft: '5%'}}><b><u>Description:</u></b><br/> {item.description}</p>
+		      <p id="description"><b><u>Description:</u></b><br/> {item.description}</p>
 
 		      <div className="bottom-right">
 			Quantity: {item.quantity}

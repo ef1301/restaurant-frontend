@@ -7,15 +7,20 @@ class Navbar extends Component{
     }
     render(){
     return (
-        <div className="navbar">
-        <Link to="/">Home</Link>
-        <p className="company"><b>BYTE ME</b></p>
-        <div id="right-align">
-            <Link to="/AccountInfo">Account</Link>
+	    <div className="header">
+	    <div id="Byte-me">
+	    <h1 className="company"><img id="logo" src="https://img.icons8.com/bubbles/100/000000/meal.png"/><b>BYTE ME</b></h1></div>
+	    <div className="navbar">
+            <Link to="/"><img id="house-icon" src="https://img.icons8.com/bubbles/50/000000/order-delivered.png" style={{height: '2em', marginTop: '-5%'}} alt="House-icon"/>Home</Link>
+
+	    
+            <div id="right-align">
+	    <Link to="/AccountInfo">Account</Link>
             <Link to="/Cart">Cart</Link>
             <Link to="/SignOut"> Sign Out </Link>
-        </div>
-        </div>
+            </div>
+            </div>
+	    </div>
         );
     }
 }

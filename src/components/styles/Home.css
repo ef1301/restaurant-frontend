@@ -1,47 +1,42 @@
-
-
-/* Style the navigation bar links */
-.navbar a {
-  font-family: Arial, Helvetica, sans-serif;
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px;
-
-}
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-body{
+body {
     background-color: #F4F1F2;
 }
+
 #menu {
+    margin-top: 12%;
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
-h1{
+
+#menu h1 {
+    padding: .25%;
     color: #555A5D;
 }
-.amount{
+
+.amount {
+    margin-left: 55%;
     font-size: 1.25em;
-    width: 2em;
+    width: 2.3em;
     text-align: center;
 }
+
 .menu-card {
-    border: thin solid #2d3d31;
-    border-radius: 15px;
+    border-radius: 5px;
     display: inline-block;
     width: 25%;
-    background-color:#67B4BF;
+    background-color: #ececd2;
     margin-top: 1%;
     margin-bottom: 2%;
     height: 100%;
     margin-right: 3%;
     margin-left: 3%;
-    padding: 1% 1%;
+    padding: .5%;
+}
+
+#menu-icon {
+    margin-top: -.5%;
+    margin-left: 1.5%;
 }
 
 h3 {
@@ -56,10 +51,6 @@ input {
     margin: .5%;
 }
 
-.menu-card img:hover {
-  opacity: 0.3;
-}
-
 .bottom-right {
     padding: 1%;
     width: 100%;
@@ -70,7 +61,7 @@ input {
 
 .crop {
     margin-bottom: 5%;
-    border: thin solid #2d3d31;
+    border: thin solid #cb5762;
     object-fit: cover;
     height: 20vw;
     width: 20vw;
@@ -78,4 +69,21 @@ input {
 
 p {
     font-size: 1.25em;
+}
+
+#description {
+    text-align: left;
+    margin-left: 5%;
+}
+
+#cart-icon {
+    margin: 1%;
+    margin-left: 3%;
+    border: thin solid grey;
+    box-shadow: .15em .15em .05em #263051;
+}
+
+#cart-icon:hover {
+    border: thin solid lightgrey;
+    box-shadow: none;
 }

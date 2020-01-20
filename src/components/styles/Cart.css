@@ -1,17 +1,14 @@
-h1
-{
+h1 {
     text-align: center;
     margin-top: 2em;
 }
 
-.card
-{
+.card {
     background: "light";
     width: '18rem'; 
 }    
 
-.card-body
-{
+.card-body {
     text-align: center;
     padding: 20px ;
 }
@@ -21,8 +18,7 @@ h1
     text-align: center;
 }
 
-.back-button
-{
+.back-button {
     float: none;
     display: inline-block;
     border-style: groove;
@@ -34,12 +30,11 @@ h1
     padding-left: 2%;
     padding-right: 2%;
 }
-.back-button:hover, a:hover
-{
+
+.back-button:hover, a:hover {
     background-color: black;
 }
 
-.place-order
-{
+.place-order {
     float: right;
 }

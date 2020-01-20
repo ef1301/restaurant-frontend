@@ -1,3 +1,5 @@
+//SAVE THIS AS A BACK UP JUST IN CASE THE BOOTSTRAP FORM IS NOT WORKING
+
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 

@@ -1,32 +1,69 @@
-ul {
+.navbar {
+    font-weight: bold;
+    font-size: 1.05em;
     width: 100%;
-    text-align: center;
-    list-style-type: none;
-    margin: 0;
+    background-color: #cd794b;
     padding: 0;
-    overflow: hidden;
-    background-color: #2A3B50;
+    margin: .15%;
+    font-family: 'Raleway', sans-serif;
 }
 
-.navbar {
-    background-color: #67B4BF;
-    padding: 0px;
+/* Style the navigation bar links */
+.navbar a {
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    color: white;
+    padding: 5px 12px;
+
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-weight: bold;
+    background-color: #cd794b;
+    padding: .25%;
     font-family: 'Raleway', sans-serif;
+}
+
+.header h1 {
+    color: white;
+    margin-top: 2%;
+    font-size: 2em;
+    padding: 0;
 }
 
 #right-align {
-    right: 0;
+    right: 10%;
     font-family: 'Raleway', sans-serif;
 }
 
-
 a:hover:not(.active) {
-    background-color: #2E6F88;
-  }
-.company{
+    text-decoration: none;
+    background-color: #cb5762;
+}
+
+.company {
+    font-size: 1em;
     text-align: center;
     color: #555A5D;
-    margin-left: 160px; 
-    font-size: 20px; 
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
+
+#logo {
+    width: 5%;
+    margin-right: 1%;
+    margin-top: -1%;
+}
+
+#Byte-me {
+    margin-left: -1%;
+}
+

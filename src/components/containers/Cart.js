@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, ListGroup, ListGroupItem, Button, Jumbotron, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Navbar from '../views/Navbar';
 import '../styles/Cart.css';
 import CartList from '../views/CartList.jsx';

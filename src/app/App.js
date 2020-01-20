@@ -10,7 +10,7 @@ import Home from '../components/containers/Home';
 import AccountInfo from '../components/views/AccountInfo';
 import Signin from '../components/views/Signin';
 //Added for cart view
-import Cart from '../components/views/Cart'; 
+import Cart from '../components/containers/Cart'; 
 
 class App extends Component {
     constructor(props) {

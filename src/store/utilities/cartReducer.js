@@ -49,18 +49,18 @@ export const addItemThunk = (item) => (dispatch) => {
 }
 
 export const fetchCartThunk = (cart) => (dispatch) => {
-  let resolvedActionObject = fetchCart(cart);
-  dispatch(resolvedActionObject);
+    let resolvedActionObject = fetchCart(cart);
+    dispatch(resolvedActionObject);
 };
 
 const cartReducer = (state = [], action) => {
     switch (action.type) {
     case ADD_TO_CART:
-        let addedItem = state.cart.find(item => item.id === action.item.id);
+        let addedItem = state.find(item => item.id === action.item.id);
         if(addedItem === undefined){
-            
+            return  [...state, action.item];            
         }
-        return  action.item;
+	return action.item; //change later
       default:
         return state;
     }
@@ -68,7 +68,5 @@ const cartReducer = (state = [], action) => {
 }
 
 //Cart allow you update order, checkout view - display order and give option to update payment and address
-
-
 
 export default cartReducer

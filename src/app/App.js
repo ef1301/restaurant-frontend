@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 //Imports for components
-import Home from '../components/views/Home';
+import Home from '../components/containers/Home';
 import AccountInfo from '../components/views/AccountInfo';
 import Signin from '../components/views/Signin';
 //Added for cart view

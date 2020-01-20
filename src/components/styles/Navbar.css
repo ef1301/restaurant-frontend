@@ -21,5 +21,12 @@ ul {
 
 
 a:hover:not(.active) {
-    background-color: #67B4BF;
+    background-color: #2E6F88;
   }
+p{
+    text-align: center;
+    color: #555A5D;
+    margin-left: 150px; 
+    font-size: 20px; 
+   
+}

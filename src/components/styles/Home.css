@@ -56,6 +56,10 @@ input {
     margin: .5%;
 }
 
+.menu-card img:hover {
+  opacity: 0.3;
+}
+
 .bottom-right {
     padding: 1%;
     width: 100%;

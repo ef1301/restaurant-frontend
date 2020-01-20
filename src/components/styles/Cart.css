@@ -34,6 +34,10 @@ h1
     padding-left: 2%;
     padding-right: 2%;
 }
+.back-button:hover, a:hover
+{
+    background-color: black;
+}
 
 .place-order
 {

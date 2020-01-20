@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../styles/Home.css'
 import Navbar from './Navbar';
-import { fetchMenuThunk } from '../../thunks';
+import { fetchMenuThunk, addItemThunk } from "../../thunks";
+//Added from cartReducer
 import { connect } from 'react-redux';
-import { Card } from 'react-bootstrap'
 
 class Home extends Component {
     constructor(props) {
@@ -14,7 +14,12 @@ class Home extends Component {
 	this.props.fetchMenu();
 	console.log(this.props.menu);
     }
-    
+	
+	handleOnClick = (event) =>
+	{
+		alert("You've added an item to your cart!");
+	}
+
     render() {
 	console.log(this.props.menu);
 	return(
@@ -34,9 +39,8 @@ class Home extends Component {
 		    	<div className="bottom-right">
 			${item.price}
 			<input className="amount" type="number" min='0' max='99'></input>
-			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></div>
+			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" onClick={this.handleOnClick}/></div>
 			</div>
-
 		))}
 		 
 	    </div>
@@ -48,13 +52,15 @@ class Home extends Component {
 
 function mapState(state){
     return {
-	menu: state.menu
+	menu: state.menu,
+	cart: state.cart
     }
 }
 
 function mapDispatch(dispatch, ownProps) {
     return {
-	fetchMenu: () => dispatch(fetchMenuThunk())
+	fetchMenu: () => dispatch(fetchMenuThunk()),
+	addToCart: () => dispatch(addItemThunk())
     }
 }
 

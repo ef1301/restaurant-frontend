@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 //Imports for components
 import Home from '../components/views/Home';
 import AccountInfo from '../components/views/AccountInfo';
+import Signin from '../components/views/Signin';
 //Added for cart view
 import Cart from '../components/views/Cart'; 
 
@@ -16,12 +17,13 @@ class App extends Component {
 	console.log(this.props.menu);
 	return (
 	    
-	    <Router>
-            <Switch>
+		<Router>
+		<Switch>
                 <Route exact path="/" render={() => <Home/>} />
                 <Route exact path="/AccountInfo" render={() => <AccountInfo/>} />
-                <Route exact path="/Cart" render={() => <Cart />} />		
-            </Switch>
+                <Route exact path="/Cart" render={() => <Cart />} />
+		<Route exact path="/Signin" render={() => <Signin />} />
+		</Switch>
 		</Router>
 	);
     }

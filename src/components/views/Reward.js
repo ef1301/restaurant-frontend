@@ -1,16 +1,36 @@
 import '../styles/Reward.css';
-import React from 'react';
+import React, {Component} from 'react';
 
+
+
+
+class ProgressBarExample extends Component{
+    constructor(props){
+        super(props)
+
+        this.state = {
+            percantage: 85
+        }
+    }
+    render(){
+        return(
+            <div>
+                <ProgressBar percantage={this.state.percantage} />
+            </div>
+
+        )
+    }
+}
 const ProgressBar = (props) => {
     return(
         <div className="progress-bar">
-            <Filler />
+            <Filler percantage={props.percantage} />
         </div>
     )
 }
 
-const Filler = (pros) => {
-    return <div className="filler" />
+const Filler = (props) => {
+    return <div className="filler" style={{ width: `${props.percantage}%` }} />
 }
 
-export default ProgressBar;
+export default ProgressBarExample;

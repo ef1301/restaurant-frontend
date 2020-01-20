@@ -9,13 +9,13 @@ class ProgressBarExample extends Component{
         super(props)
 
         this.state = {
-            percantage: 85
+            percentage: 50
         }
     }
     render(){
         return(
             <div>
-                <ProgressBar percantage={this.state.percantage} />
+                <ProgressBar percentage={this.state.percentage} />
             </div>
 
         )
@@ -24,13 +24,13 @@ class ProgressBarExample extends Component{
 const ProgressBar = (props) => {
     return(
         <div className="progress-bar">
-            <Filler percantage={props.percantage} />
+            <Filler percentage={props.percentage} />
         </div>
     )
 }
 
 const Filler = (props) => {
-    return <div className="filler" style={{ width: `${props.percantage}%` }} />
+    return <div className="filler" style={{ width: `${props.percentage}%` }} />
 }
 
 export default ProgressBarExample;

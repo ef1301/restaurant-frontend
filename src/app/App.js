@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Home from '../components/containers/Home';
 import AccountInfo from '../components/views/AccountInfo';
 import Signin from '../components/views/Signin';
-import Cart from '../components/views/Cart'; 
+import Cart from '../components/containers/Cart'; 
 import Checkout from '../components/views/Checkout';
 
 class App extends Component {

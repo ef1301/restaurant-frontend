@@ -1,37 +1,26 @@
-function CartView(props) {
+import React from 'react';
+
+function CartList(props) {
     if(this.props.cart.length === 0) {
         return <p> Your cart is empty </p>
     }
     else{
 	return( <div>
-		{this.props.cart.map( (item) => ( 
-			<Card className="mx-auto" style={{ width: "18rem" }} key={item.id} >
-			<Card.Img
-		    variant="top"
-		    src="https://image.freepik.com/free-photo/delicious-cheeseburger_1232-503.jpg"
-			/>
-			<Card.Body>
-			<Card.Title>Food Name</Card.Title>
-			<Card.Text>{item.description}</Card.Text>
-			</Card.Body>
-			<ListGroup className="listgroup-quanity">
-			<ListGroupItem>Quantity: {item.quantity}</ListGroupItem>
-			</ListGroup>
-			<Card.Body className="card-body">
-			<input
-		    type="number"
-		    width="4vw"
-		    fontSize="14px"
-		    onChange={this.handleChange}
-			></input>
-			<Button variant="outline-danger">Remove</Button>
-			</Card.Body>
-			</Card>}
+		{this.props.cart.map( (item) => (
+		    <div className="menu-card" key={item.id}>
+		      <h3>{item.item}</h3>
+		      <img className="crop"src={item.imageUrl} alt={item.item}/>
+		      <p style={{textAlign:'left', marginLeft: '5%'}}><b><u>Description:</u></b><br/> {item.description}</p>
 
-				    )}
-		</div>
+		      <div className="bottom-right">
+			Quantity: {item.quantity}
+		      </div>
+		    </div>
+		))}
+    		</div>
+
 	      );
     }
 }
 
-export default CartView;
+export default CartList;

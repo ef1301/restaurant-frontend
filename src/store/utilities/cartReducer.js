@@ -56,9 +56,11 @@ export const fetchCartThunk = (cart) => (dispatch) => {
 const cartReducer = (state = [], action) => {
     switch (action.type) {
     case ADD_TO_CART:
-        return [...state, action.item ]
-    case fetchCart:
-        return  action.cart;
+        let addedItem = state.cart.find(item => item.id === action.item.id);
+        if(addedItem === undefined){
+            
+        }
+        return  action.item;
       default:
         return state;
     }

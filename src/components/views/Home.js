@@ -7,21 +7,26 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
     constructor(props) {
-	super(props);
+		super(props);
+		this.state = {
+			item: {},
+			quantity: 1
+		}
     }
 
     componentDidMount() {
 	this.props.fetchMenu();
-	console.log(this.props.menu);
     }
 	
 	handleOnClick = (event) =>
 	{
 		alert("You've added an item to your cart!");
+		console.log('clicked', this.props.cart);
+		console.log(event.target.value);
+		this.props.addToCart(event.target.value);
 	}
 
     render() {
-	console.log(this.props.menu);
 	return(
 		<div>
 		<Navbar />
@@ -38,7 +43,7 @@ class Home extends Component {
 			
 		    	<div className="bottom-right">
 			${item.price}
-			<input className="amount" type="number" min='0' max='99'></input>
+			<input className="amount" type="number" value={this.state.quantity} min='0' max='99'></input>
 			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" onClick={this.handleOnClick}/></div>
 			</div>
 		))}
@@ -60,7 +65,7 @@ function mapState(state){
 function mapDispatch(dispatch, ownProps) {
     return {
 	fetchMenu: () => dispatch(fetchMenuThunk()),
-	addToCart: () => dispatch(addItemThunk())
+	addToCart: (item) => dispatch(addItemThunk(item))
     }
 }
 

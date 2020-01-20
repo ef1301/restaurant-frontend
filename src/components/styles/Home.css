@@ -1,13 +1,6 @@
 body {
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  top: 0;
-}
-
 /* Style the navigation bar links */
 .navbar a {
   font-family: Arial, Helvetica, sans-serif;
@@ -28,17 +21,16 @@ body {
 }
 
 .menu-card {
-    border-radius: 10px;
-    box-shadow: 5px 5px #2d3d31;
+    border: thin solid #2d3d31;
     display: inline-block;
     width: 25%;
-    background-color: #696965;
+    background-color: white;
     margin-top: 1%;
     margin-bottom: 2%;
-    height: 33vw;
+    height: 100%;
     margin-right: 3%;
     margin-left: 3%;
-    padding: 2% 2%;
+    padding: 1% 1%;
 }
 
 h3 {
@@ -47,6 +39,7 @@ h3 {
 }
 
 input {
+    margin-left: 50%;
     font-size: 1.5em;
     width: 2.5vw;
     margin: .5%;
@@ -54,15 +47,15 @@ input {
 
 .bottom-right {
     padding: 1%;
-    width: 60%;
-    margin-top: 8%;
+    width: 100%;
     text-align: right;
     display: inline-block;
-    float: right;
+    right: 2%;
 }
 
 .crop {
-    border: medium solid #2d3d31;
+    margin-bottom: 5%;
+    border: thin solid #2d3d31;
     object-fit: cover;
     height: 20vw;
     width: 20vw;

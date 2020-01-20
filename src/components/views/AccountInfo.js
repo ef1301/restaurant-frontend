@@ -26,7 +26,7 @@ class AccountInfo extends Component{
     formRender() {
 	if(this.state.edit === true) {
 	    return(
-		    <div className="editInfo">
+		    <div className="info">
 		    <Form>
 		    <Form.Row>
 		    <Form.Group as={Col} controlId="formGrid">
@@ -101,10 +101,10 @@ class AccountInfo extends Component{
 	}
 	else {
 	    return(<div className="info">
-			<h1 className="account">Account Information</h1>
-		   <h2 className="name"> Name: </h2>
-		   <h2 className="num">Phone Number: </h2>
-		   <h2 className="add">Address: </h2>
+		   <h3 className="account">Account Information</h3>
+		   <p className="name"> Name: </p>
+		   <p className="num">Phone Number: </p>
+		   <p className="add">Address: </p>
 		   <button className="edit" variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
 		   </div>
 		  );
@@ -118,10 +118,17 @@ class AccountInfo extends Component{
 		<div className="container">
 		{this.formRender()}
 
+		<div className="rewards">
+		<h3>Rewards</h3>
 	    	<div id="progress-bar">
-		<div id="reward-status">
+		<div id="reward-status" style={{width: '10%'}}>
+		<p>10%</p>
 		</div>
+		
 		</div>
+
+	    
+	    </div>
 
 	    
 	    </div>

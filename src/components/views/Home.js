@@ -21,10 +21,6 @@ class Home extends Component {
 		<div>
 		<Navbar />
 
-		<div id="progress-bar">
-		<div id="reward-status">
-		</div>
-		</div>
 
 		<div id="menu">
 		<h1>MENU</h1>
@@ -32,15 +28,15 @@ class Home extends Component {
 			<div className="menu-card" key={item.id}>
 			<h3>{item.item}</h3>
 			<img className="crop"src={item.imageUrl} alt={item.item}/>
+			<p style={{textAlign:'left', marginLeft: '5%'}}><u>Description:</u><br/> {item.description}</p>
 
-			<p><u>Description:</u> {item.description}</p>
-
-			<div className="bottom-right">
-			<p>${item.price} 
+			
+		    	<div className="bottom-right">
+			${item.price}
 			<input type="number"></input>
-			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></p>
+			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></div>
 			</div>
-			</div>
+
 		))}
 		 
 	    </div>

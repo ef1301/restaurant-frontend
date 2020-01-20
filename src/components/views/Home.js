@@ -33,7 +33,7 @@ class Home extends Component {
 			
 		    	<div className="bottom-right">
 			${item.price}
-			<input type="number"></input>
+			<input className="amount" type="number"></input>
 			<img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></div>
 			</div>
 

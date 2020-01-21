@@ -21,9 +21,10 @@ function fetchMenu(menu) {
 function menuReducer(state = [], action) {
     switch(action.type) {
     case FETCH_MENU:
-	    return action.menu;
+	action.menu.forEach( element => element.quantity = 0);
+	return action.menu;
     default:
-	    return state;
+	return state;
     }
 }
 

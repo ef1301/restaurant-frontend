@@ -1,6 +1,7 @@
 import React from "react";
 
 function MenuItems(props) {
+    console.log(props);
     return (
 	<div id="menu">
 	  <h1>MENU<img id='menu-icon' src="https://img.icons8.com/color/48/000000/restaurant-menu.png"/></h1>
@@ -13,8 +14,9 @@ function MenuItems(props) {
 
 		<div className="bottom-right">
 		  ${item.price}
-		  <input className="amount" type="number" name="quantity" min='0' max='99'></input>
-		  <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart"/></div>
+		  <input className="amount" type="number" name="quantity" min='0' max='99' onChange={props.handleChange}></input>
+		  <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" onClick={() => props.addToCart(
+			{id: item.id, quantity: props.quantity})}/></div>
 	      </div>
 	  ))}
 	

@@ -21,29 +21,20 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-      //this.props.fetchCart();
+      this.props.fetchCart();
       console.log(this.props.cart);
   }
 
-  handleChange(event) {
-    if (event.target.value >= 1) {
-      this.setState({ quantity: event.target.value });
-    } else {
-      alert("Your quantity must be 1 or higher");
+    handleChange(event) {
+	if (event.target.value >= 1) {
+	    this.setState({ quantity: event.target.value });
+	}
+	else {
+	    alert("Your quantity must be 1 or higher");
+	}
     }
-  }
-  /* Homepage displays the items */
+    /* Homepage displays the items */
   // Cart page will give us all the selected items and the information about each product
-
-  cardRender()
-  {
-      if(this.props.cart.length === 0) {
-        return <p> Your cart is empty </p>
-      }
-      else{
-	  return <CartList cart={this.props.cart}/>
-      }
-  }
 
     render() {
 	return (
@@ -51,13 +42,8 @@ class Cart extends Component {
 		<Navbar />
 		<div className="container">
 		<h1> CART </h1>
-		<div className="back-button">
-		<Link to="/">Back</Link>
-		</div>
-		{this.cardRender()}
-		<Button className="place-order" variant="primary" size="lg">
-		<Link to="/Checkout"> Next </Link>
-		</Button>
+		<CartList cart={this.props.cart}/>
+		<button id='checkout'><Link to="/Checkout">Proceed to checkout</Link></button>
 		</div>
 		</div>
 		

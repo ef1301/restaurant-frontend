@@ -6,7 +6,7 @@
 .rewards {
     border: thin solid #2d3d31;
     padding: 3%;
-    background-color: #67B4BF; 
+    background-color: #cd794b; 
     border-radius: 15px;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
@@ -33,7 +33,7 @@
     border: thin solid #2d3d31;
     display: inline-block;
     width: 100%;
-    background-color: #67B4BF;
+    background-color: #cd794b;
     margin-top: 1%;
     margin-bottom: 2%;
     height: 100%;

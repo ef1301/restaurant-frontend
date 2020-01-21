@@ -39,7 +39,7 @@ class Signin extends Component {
 		    <Form.Control type="password" placeholder="Password" />
 		    </Form.Group>
 		    <Button variant="primary" type="submit">Sign In</Button>
-		    <a id="change" onClick={this.handleUser}>Sign up?</a>
+		    <a id="change" style={{backgroundColor: '#ececd2'}}onClick={this.handleUser}>Sign up?</a>
 		    </div>
 	    );
 	}
@@ -70,7 +70,7 @@ class Signin extends Component {
 	return(
 	    <div>
 	    	<div id="header">
-		<h1>Bytemee</h1>
+		<h1 className="title">Bytemee</h1>
 		</div>
 
 		<div id="Signin">		

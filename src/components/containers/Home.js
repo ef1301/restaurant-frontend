@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Home.css'
 import Navbar from '../views/Navbar';
+import Footer from '../views/Footer';
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 import { fetchMenuThunk, addItemThunk } from "../../thunks";
@@ -31,6 +32,8 @@ class Home extends Component {
 		</div>
 		
 		<MenuItems menu={this.props.menu} quantity={this.state.quantity} handleChange={this.handleChange} addToCart={this.props.addToCart}/>
+
+		<Footer />
 		</div>
 	);
     }   

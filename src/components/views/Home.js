@@ -7,23 +7,23 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
     constructor(props) {
-		super(props);
-		this.state = {
-			item: {},
-			quantity: 1
-		}
+	super(props);
+	this.state = {
+	    id: '',
+	    quantity: 1
+	}
     }
 
     componentDidMount() {
 	this.props.fetchMenu();
     }
-	
-	handleOnClick = (event) =>
+    
+    handleOnClick = (event) =>
 	{
-		alert("You've added an item to your cart!");
-		console.log('clicked', this.props.cart);
-		console.log(event.target.value);
-		this.props.addToCart(event.target.value);
+	    alert("You've added an item to your cart!");
+	    console.log('clicked', this.props.cart);
+	    console.log(event.target.value);
+	    this.props.addToCart(event.target.value);
 	}
 
     render() {
@@ -39,7 +39,7 @@ class Home extends Component {
 			<img className="crop"src={item.imageUrl} alt={item.item}/>
 			<p style={{textAlign:'left', marginLeft: '5%'}}><b><u>Description:</u></b><br/> {item.description}</p>
 
-			
+		    
 		    	<div className="bottom-right">
 			${item.price}
 			<input className="amount" type="number" value={this.state.quantity} min='0' max='99'></input>

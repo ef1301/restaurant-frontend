@@ -18,7 +18,7 @@ function removeFromCart(item) {
         type: REMOVE_ITEM,
         item
     }
-}
+}   
 
 function subFromQuantity(id) {
     return {
@@ -53,15 +53,21 @@ export const fetchCartThunk = (cart) => (dispatch) => {
     dispatch(resolvedActionObject);
 };
 
+export const addToQuantityThunk = (id) => (dispatch) => {
+    let resolvedActionObject = addToQuantity(id);
+    dispatch(resolvedActionObject);
+}
+
 const cartReducer = (state = {}, action) => {
     switch (action.type) {
     case ADD_TO_CART:
-	state.map( (item) => {
-	    if (item.id === action.item.id)
-		return state;
-	    else return [...state, action.item];
-	})
-      default:
+	if (state[action.item.id] === undefined) { //if does not exist in cart
+	    return {...state, [action.item.id]: Number(action.item.quantity)};//add to state
+	}
+	else {
+	    
+	    return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )} }
+    default:
         return state;
     }
 

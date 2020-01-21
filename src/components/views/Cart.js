@@ -74,16 +74,6 @@ class Cart extends Component {
         <Navbar />
         <h1> CART </h1>
         <div className="back-button">
-          <Link
-            to="/"
-            style={{
-              fontSize: "18px",
-              textDecoration: "none",
-              color: "white"
-            }}
-          >
-            Back
-          </Link>
         </div>
         {this.cardRender()}
         <Button className="place-order" variant="primary" size="lg">

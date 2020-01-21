@@ -53,14 +53,14 @@ export const fetchCartThunk = (cart) => (dispatch) => {
     dispatch(resolvedActionObject);
 };
 
-const cartReducer = (state = [], action) => {
+const cartReducer = (state = {}, action) => {
     switch (action.type) {
     case ADD_TO_CART:
-        let addedItem = state.find(item => item.id === action.item.id);
-        if(addedItem === undefined){
-            return  [...state, action.item];            
-        }
-	return action.item; //change later
+	state.map( (item) => {
+	    if (item.id === action.item.id)
+		return state;
+	    else return [...state, action.item];
+	})
       default:
         return state;
     }

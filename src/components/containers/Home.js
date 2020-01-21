@@ -9,29 +9,44 @@ import { connect } from 'react-redux';
 class Home extends Component {
     constructor(props) {
 	super(props);
-	this.state = {
-	    id: '',
-	    quantity: 0
-	}
     }
 
     componentDidMount() {
 	this.props.fetchMenu();
     }
 
-    handleChange = (event) => {
+    /*handleChange = (event) => {
 	this.setState({ [event.target.name]: event.target.value });
-    }
+    }*/
     
-    handleOnClick = (event) => {
-	//this.props.addToCart();
+    handleSubmit = (event) => {
+	console.log(event.target.value);
+	this.props.addToCart(event.target.value);
     }
 
     render() {
 	return(
 	    	<div>
 		<Navbar />
-		<MenuItems menu={this.props.menu}/>
+		{/*<MenuItems menu={this.props.menu}/>*/}
+		<div id="menu">
+		<h1>MENU<img id='menu-icon' src="https://img.icons8.com/color/48/000000/restaurant-menu.png"/></h1>
+		
+	    {this.props.menu.map( (item) => 
+		    <div className="menu-card" key={item.id}>
+		    <h3>{item.item}</h3>
+		    <img className="crop"src={item.imageUrl} alt={item.item}/>
+		    <p style={{textAlign:'left', marginLeft: '5%'}}><b><u>Description:</u></b><br/> {item.description}</p>
+
+		    <div className="bottom-right">
+		    ${item.price}
+		    <input className="amount" type="number" min='0' max='99'></input>
+				 <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" />
+				  </div>
+			</div>
+	    )}
+	    
+    	    </div>
 		</div>
 
 	);

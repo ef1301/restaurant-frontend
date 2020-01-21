@@ -65,7 +65,6 @@ const cartReducer = (state = {}, action) => {
 	    return {...state, [action.item.id]: Number(action.item.quantity)};//add to state
 	}
 	else {
-	    
 	    return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )} }
     default:
         return state;

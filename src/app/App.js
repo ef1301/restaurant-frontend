@@ -25,7 +25,7 @@ class App extends Component {
 	    return (<Route exact path="/" render={() => <Home/>} />);
 	}
 	else {
-	    return (<Route exact path="/" render={() => <Signin/>} />);
+	    return (<Route exact path="/SignIn" render={() => <Signin/>} />);
 	}
     }
     

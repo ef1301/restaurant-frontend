@@ -181,7 +181,7 @@ class AccountInfo extends Component{
 
 	    
 	    </div>
-		
+
 	);
     }
 };

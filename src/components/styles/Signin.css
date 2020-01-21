@@ -1,8 +1,9 @@
 #Signin {
-    background-color: white;
+    background-color: #ececd2;
     text-align: left;
     margin: 2% 15% 2% 15%;
     padding: 2%;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 #change, #change:hover, #change:active {
@@ -20,8 +21,13 @@
     top: 0;
     margin: 0;
     width: 100%;
-    text-align: left;
-    background-color: #2E6F88;
-    padding: 0px;
-    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    background-color: #cd794b;
+    padding-top: 1px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+.title{
+    font-size:40px;
+    padding-bottom: 5px;
+    padding-top: 0px; 
 }

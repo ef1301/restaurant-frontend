@@ -39,7 +39,7 @@ class Signin extends Component {
 		    <Form.Control type="password" placeholder="Password" />
 		    </Form.Group>
 		    <Button variant="primary" type="submit">Sign In</Button>
-		    <a id="change" style={{backgroundColor: '#ececd2'}}onClick={this.handleUser}>Sign up?</a>
+		    <a id="change" style={{backgroundColor: '#ececd2'}} onClick={this.handleUser}>Sign up?</a>
 		    </div>
 	    );
 	}
@@ -59,7 +59,7 @@ class Signin extends Component {
 		    <Form.Control type="password" placeholder="Confirm Password" />
 		    </Form.Group> 
 		    <Button variant="primary" type="submit">Sign Up</Button>
-		    <a id="change" onClick={this.handleUser}>Already a user?</a>
+		    <a id="change" style={{backgroundColor: '#ececd2'}} onClick={this.handleUser}>Already a user?</a>
 		    </div>
 	    );
 	}

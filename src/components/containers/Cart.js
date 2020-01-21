@@ -4,7 +4,7 @@ import Navbar from '../views/Navbar';
 import '../styles/Cart.css';
 import CartList from '../views/CartList.jsx';
 import { Link } from 'react-router-dom';
-import { fetchCartThunk, addItemThunk } from "../../thunks";
+import { fetchCartThunk, addItemThunk, fetchItemThunk } from "../../thunks";
 import { connect } from 'react-redux'
 
 class Cart extends Component {
@@ -42,7 +42,7 @@ class Cart extends Component {
 		<Navbar />
 		<div className="container">
 		<h1> CART </h1>
-		<CartList cart={this.props.cart}/>
+		  <CartList cart={this.props.cart}/>
 		<button id='checkout'><Link to="/Checkout">Proceed to checkout</Link></button>
 		</div>
 		</div>
@@ -59,7 +59,8 @@ function mapState(state) {
 function mapDispatch(dispatch) {
     return {
         fetchCart: () => dispatch(fetchCartThunk()),
-        addToCart: () => dispatch(addItemThunk())
+        addToCart: () => dispatch(addItemThunk()),
+        fetchItem: () => dispatch(fetchItemThunk())
     }
 }
 

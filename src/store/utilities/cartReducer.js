@@ -4,8 +4,17 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const FETCH_CART = 'FETCH_CART';
+export const FETCH_ITEM = "FETCH_ITEM";
+
 
 //Action creator
+function fetchItem(item) {
+    return {
+        type: FETCH_ITEM,
+        item
+    }
+}
+
 function addToCart(item){
     return {
         type: ADD_TO_CART,
@@ -58,10 +67,17 @@ export const addToQuantityThunk = (id) => (dispatch) => {
     dispatch(resolvedActionObject);
 }
 
+export const fetchItemThunk = (item) => (dispatch) => {
+    let resolvedActionObject = fetchItem(item);
+    dispatch(resolvedActionObject);
+}
+
 const cartReducer = (state = {}, action) => {
     switch (action.type) {
     case FETCH_CART:
-	return state;
+        return state;
+    case FETCH_ITEM:
+        return state.item;
     case ADD_TO_CART:
 	if (state[action.item.id] === undefined) { //if does not exist in cart
 	    return {...state, [action.item.id]: Number(action.item.quantity)};//add to state
@@ -71,9 +87,7 @@ const cartReducer = (state = {}, action) => {
     default:
         return state;
     }
-
 }
 
 //Cart allow you update order, checkout view - display order and give option to update payment and address
-
 export default cartReducer

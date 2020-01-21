@@ -30,7 +30,7 @@ class App extends Component {
     }
     
     render() {
-	console.log(this.props.menu);
+	//console.log(this.props.menu);
 	return (
     <Router>
       <Switch>

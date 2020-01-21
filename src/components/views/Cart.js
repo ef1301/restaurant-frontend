@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import '../styles/Cart.css';
 import { Link } from 'react-router-dom';
 import { fetchCartThunk, addItemThunk } from "../../thunks";
+import cartReducer from "../../store/utilities/cartReducer";
 import { connect } from 'react-redux'
 
 class Cart extends Component {
@@ -21,7 +22,7 @@ class Cart extends Component {
 
   componentDidMount() {
       //this.props.fetchCart();
-      console.log(this.props.cart);
+      //console.log(this.props.cart);
   }
 
   handleChange(event) {
@@ -79,6 +80,10 @@ class Cart extends Component {
         <Button className="place-order" variant="primary" size="lg">
           <Link to="/Checkout"> Next </Link>
         </Button>
+        {Object.keys(this.props.cart).map( (key) => 
+          console.log('REEE',key)
+        )}
+
       </div>
     );
   }
@@ -86,13 +91,15 @@ class Cart extends Component {
 
 function mapState(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        item: state.item        
     }
 }
 function mapDispatch(dispatch) {
     return {
         fetchCart: () => dispatch(fetchCartThunk()),
-        addToCart: () => dispatch(addItemThunk())
+        addToCart: () => dispatch(addItemThunk()),
+        fetchItem: () => dispatch(fetchItemThunk())
     }
 }
 

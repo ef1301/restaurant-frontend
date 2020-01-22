@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
 import Navbar from '../views/Navbar';
+import Footer from '../views/Footer';
 import '../styles/Account.css';
 import ProgressBar from '../views/Reward';
 
@@ -27,7 +28,7 @@ class AccountInfo extends Component{
     formRender() {
 	if(this.state.edit === true) {
 	    return(
-		    <div className="info">
+		    <div>
 		    <Form>
 		    <Form.Row>
 		    <Form.Group as={Col} controlId="formGrid">
@@ -150,12 +151,17 @@ class AccountInfo extends Component{
 	    );
 	}
 	else {
-	    return(<div className="info">
-		   <h3 className="account">Account Information</h3>
-		   <p className="name"> Name: </p>
-		   <p className="num">Phone Number: </p>
-		   <p className="add">Address: </p>
+	    return(<div className="container">
+		   <h3>Account Information</h3>
+
+		   <div id="info">
+		   <p>Name: <br/>
+		   Phone Number: <br/>
+		   Address: 
+		   </p>
 		   <button className="edit" variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
+		   </div>
+		   
 		   </div>
 		  );
 	}
@@ -165,22 +171,14 @@ class AccountInfo extends Component{
 	return (
 		<div>
 		<Navbar />
-		<div className="container">
+		<div id="account">
 		{this.formRender()}
-
-		<div className="rewards">
-		<h3>Rewards</h3>
-	    	<div id="progress-bar">
+	    	<h3>Rewards</h3>
 		<ProgressBar />
 		</div>
 		
+		<Footer />
 		</div>
-
-	    
-	    </div>
-
-	    
-	    </div>
 
 	);
     }

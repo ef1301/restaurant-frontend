@@ -27,15 +27,15 @@ class Home extends Component {
     render() {
 	return (<div>
 		<Navbar />
-		<div className="image">
-		<img className="deals" src="https://www.chewboom.com/wp-content/uploads/2018/05/Burger-King-Offers-New-3.79-Kings-Meal-Deal-678x381.jpg"/>
-		</div>
-		
+		{/*<div className="image">
+		   <img className="deals" src="https://www.chewboom.com/wp-content/uploads/2018/05/Burger-King-Offers-New-3.79-Kings-Meal-Deal-678x381.jpg"/>
+		   </div>*/}
+
 		<MenuItems menu={this.props.menu} quantity={this.state.quantity} handleChange={this.handleChange} addToCart={this.props.addToCart}/>
 
 		<Footer />
 		</div>
-	);
+	       );
     }   
 }
 

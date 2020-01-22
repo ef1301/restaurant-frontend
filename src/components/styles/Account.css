@@ -1,44 +1,47 @@
-.container {
-    padding: 5%;
-    margin-top: 12%;
-}
-
-.rewards {
-    border: thin solid #2d3d31;
-    padding: 3%;
-    background-color: #cd794b; 
-    border-radius: 15px;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-}
-
-#progress-bar {
-    border: thin solid #2d3d31;
-    border-radius: .5vw;
-    width: 100%;
-    height: 30%;
-    padding: .5%;
-    background-color: #F4F1F2; 
-}
-
-#reward-status {
-    margin: .25% 1% .25% 1%;
-    text-align: center;
-    border-radius: 3vw;
-    background-color: green;
-    height: 5%;
-    color: white;
-}
-
-.info{
-    border: thin solid #2d3d31;
-    display: inline-block;
-    width: 100%;
-    background-color: #cd794b;
-    margin-top: 1%;
-    margin-bottom: 2%;
+#account {
     height: 100%;
-    padding: 5%;
-    border-radius: 15px;
+    margin-top: 2%;
+    text-align: center;
+    background-color: #ececd2;
+    padding: 10%;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+.container {
+
+    width: 50%;
+    color: #85503f;;
+    display: inline;
     font-size: 20px;
+}
+
+.container h3 {
+    color: black;
+}
+
+#progress-bar {  
+    width: 70%;
+}
+
+#info {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: right;
+}
+
+#info p{
+    text-align: left;
+}
+
+#info button {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 1% 2%;
+    text-decoration: none;
+    background-color: #cd794b;
+}
+
+#info button:hover {
+    background-color: #cb5762;
 }

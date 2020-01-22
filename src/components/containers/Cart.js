@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import Navbar from '../views/Navbar';
+import Footer from '../views/Footer';
 import '../styles/Cart.css';
 import CartList from '../views/CartList.jsx';
 import { Link } from 'react-router-dom';
-import { fetchCartThunk, addItemThunk, fetchItemThunk } from "../../thunks";
+import { fetchCartThunk, addItemThunk } from "../../thunks";
 import { connect } from 'react-redux'
 
 class Cart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      id: "",
-      img: "",
-      description: "This food is delicious",
-      quantity: 1
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+    constructor(props) {
+	super(props);
+    }
 
-  componentDidMount() {
-      this.props.fetchCart();
-      console.log(this.props.cart);
-  }
+    componentDidMount() {
+	this.props.fetchCart();
+	console.log(this.props.cart);
+    }
 
-    handleChange(event) {
+    handleChange = (event) => {
 	if (event.target.value >= 1) {
 	    this.setState({ quantity: event.target.value });
 	}
@@ -33,34 +25,52 @@ class Cart extends Component {
 	    alert("Your quantity must be 1 or higher");
 	}
     }
-    /* Homepage displays the items */
-  // Cart page will give us all the selected items and the information about each product
+
+    currentItem = (id) => {
+	return this.props.menu.find( (key) => key.id === Number(id))
+    }
+    
+    itemRender = () => {
+	if(Object.keys(this.props.cart).length === 0) {
+            return <p> Your cart is empty </p>
+	}
+	else {
+	    return Object.keys(this.props.cart).map( (key) => {
+		console.log('key',key);
+		return (<CartList quantity={this.props.cart[key]} item={this.currentItem(key)}/>);
+	    })
+	}
+    }
 
     render() {
 	return (
 		<div>
 		<Navbar />
-		<div className="container">
+		
+		<div className="cart">
 		<h1> CART </h1>
-		  <CartList cart={this.props.cart}/>
 		<button id='checkout'><Link to="/Checkout">Proceed to checkout</Link></button>
-		</div>
+		{this.itemRender()}
+		
 		</div>
 		
-    );
-  }
+		<Footer />
+		</div>
+		
+	);
+    }
 } 
 
 function mapState(state) {
     return {
+	menu: state.menu,
         cart: state.cart
     }
 }
 function mapDispatch(dispatch) {
     return {
         fetchCart: () => dispatch(fetchCartThunk()),
-        addToCart: () => dispatch(addItemThunk()),
-        fetchItem: () => dispatch(fetchItemThunk())
+        addToCart: () => dispatch(addItemThunk())
     }
 }
 

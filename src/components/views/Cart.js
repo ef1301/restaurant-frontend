@@ -32,9 +32,7 @@ class Cart extends Component {
       alert("Your quantity must be 1 or higher");
     }
   }
-  /* Homepage displays the items */
-  // Cart page will give us all the selected items and the information about each product
-
+    
   cardRender()
   {
       if(this.props.cart.length === 0) {

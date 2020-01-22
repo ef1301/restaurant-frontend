@@ -68,10 +68,12 @@ a:hover:not(.active) {
 }
 
 .footer {
-    text-align: left;
+    width: 100%;
     margin: 0;
     bottom: 0;
-    padding: .05vw .25%;
+    left: 0;
+    right:0;
+    padding: .4vw;
     background-color: #85503f;
 }
 

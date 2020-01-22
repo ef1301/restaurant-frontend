@@ -1,13 +1,13 @@
-
 body {
     background-color: #F4F1F2;
 }
 
 #menu {
-    margin-top: -5px;
+    margin-top: 12%;
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+    margin-bottom: 5%;
 }
 
 .image

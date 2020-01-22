@@ -2,7 +2,6 @@ import axios from 'axios';
 //fetching the entire menu -> menu reducer
 
 const FETCH_MENU = 'FETCH_MENU';
-const FETCH_MENU_ITEM = "FETCH_MENU_ITEM";
 
 export const fetchMenuThunk = () => (dispatch) => {
     //the axios.get call would go here to fetch the menu so that we can map them to JSX elements
@@ -12,11 +11,6 @@ export const fetchMenuThunk = () => (dispatch) => {
         .catch(err => console.log(err));
     }
 
-export const fetchMenuItemThunk = id => dispatch => {
-  let resolvedActionObject = fetchMenuItem(id);
-  dispatch(resolvedActionObject);
-};
-
 function fetchMenu(menu) {
     return {
 	type: FETCH_MENU,
@@ -24,22 +18,11 @@ function fetchMenu(menu) {
     }
 }
 
-function fetchMenuItem(id) {
-    return {
-        type: FETCH_MENU_ITEM,
-        id
-    }
-}
-
-
-
 function menuReducer(state = [], action) {
     switch(action.type) {
     case FETCH_MENU:
 	action.menu.forEach( element => element.quantity = 0);
         return action.menu;
-    case FETCH_MENU_ITEM:
-        return state.find((object) => object.id === action.id);
     default:
 	return state;
     }

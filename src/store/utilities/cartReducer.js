@@ -1,17 +1,17 @@
 //Action types, hoisted to the top
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
-export const SUB_QUANTITY = 'SUB_QUANTITY';
-export const ADD_QUANTITY = 'ADD_QUANTITY';
+//export const SUB_QUANTITY = 'SUB_QUANTITY';
+//export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const FETCH_CART = 'FETCH_CART';
-export const FETCH_ITEM = "FETCH_ITEM";
-
+export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 
 //Action creator
-function fetchItem(item) {
+function fetchCart(cart) {
     return {
-        type: FETCH_ITEM,
-        item
+        type: FETCH_CART,
+        cart
+
     }
 }
 
@@ -27,29 +27,30 @@ function removeFromCart(item) {
         type: REMOVE_ITEM,
         item
     }
-}   
+}
 
-function subFromQuantity(id) {
+function updateQuantity(item) {
     return {
-        type: SUB_QUANTITY,
-        id
+	type: UPDATE_QUANTITY,
+	item
     }
 }
 
-function addToQuantity(id){
+/*function addToQuantity(id){
     return {
         type: ADD_TO_CART,
         id
     }
 }
 
-function fetchCart(cart) {
-    return {
-        type: FETCH_CART,
-        cart
 
+function subFromQuantity(id) {
+    return {
+        type: SUB_QUANTITY,
+        id
     }
-}
+}*/
+
 
 //Thunks
 export const addItemThunk = (item) => (dispatch) => {
@@ -62,7 +63,12 @@ export const fetchCartThunk = (cart) => (dispatch) => {
     dispatch(resolvedActionObject);
 };
 
-export const addToQuantityThunk = (id) => (dispatch) => {
+export const updateQuantityThunk = (item) => (dispatch) => {
+    let resolvedActionObject = updateQuantity(item);
+    dispatch(resolvedActionObject);
+}
+
+/*export const addToQuantityThunk = (id) => (dispatch) => {
     let resolvedActionObject = addToQuantity(id);
     dispatch(resolvedActionObject);
 }
@@ -70,33 +76,27 @@ export const addToQuantityThunk = (id) => (dispatch) => {
 export const subFromQuantityThunk = (id) => (dispatch) => {
     let resolvedActionObject = subFromQuantity(id);
     dispatch(resolvedActionObject);
-}
-
-export const fetchItemThunk = (item) => (dispatch) => {
-    let resolvedActionObject = fetchItem(item);
-    dispatch(resolvedActionObject);
-}
+}*/
 
 // State is an object
 const cartReducer = (state = {}, action) => {
     switch (action.type) {
     case FETCH_CART:
         return state;
-    case FETCH_ITEM:
-        return state.item;
-    case ADD_QUANTITY:
-	return {...state, [action.item.id]: state[action.item.id] + 1};
-    case SUB_QUANTITY:
-	return {...state, [action.item.id]: state[action.item.id] - 1};
     case ADD_TO_CART:
 	if (state[action.item.id] === undefined) { //if does not exist in cart
 	    return {...state, [action.item.id]: Number(action.item.quantity)};//add to state
 	}
-	else {
-	    return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )}}
-
+	return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )}
+    case UPDATE_QUANTITY:
+	return Object.keys(state).map( (item) => {
+	    if(item.id === action.item.id) {
+		return Object.assign({}, item, action.item);
+	    }
+	    else return item;
+	})
     default:
-        return state;
+	return state;
     }
 }
 

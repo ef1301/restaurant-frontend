@@ -4,33 +4,17 @@ import Footer from '../views/Footer';
 import '../styles/Cart.css';
 import CartList from '../views/CartList.jsx';
 import { Link } from 'react-router-dom';
-import { fetchCartThunk, addItemThunk, addToQuantityThunk, subFromQuantityThunk } from "../../thunks";
+import { fetchCartThunk, addItemThunk } from "../../thunks";
 import { connect } from 'react-redux'
 
 class Cart extends Component {
     componentDidMount() {
+	console.log('CART', this.props.cart);
 	this.props.fetchCart();
-	console.log(this.props.cart);
-    }
-
-    handleChange = (event) => {
-	if (event.target.value >= 1) {
-	    this.setState({ quantity: event.target.value });
-	}
-	else {
-	    alert("Your quantity must be 1 or higher");
-	}
-    }
-
-    addToQuantity = (id) => {
-	this.props.addToQuantity(id);
-    }
-
-    subFromQuantity = (id) => {
-	this.props.subFromQuantity(id);
     }
     
     currentItem = (id) => {
+	console.log('item', id);
 	return this.props.menu.find( (key) => key.id === Number(id))
     }
     
@@ -40,8 +24,7 @@ class Cart extends Component {
 	}
 	else {
 	    return Object.keys(this.props.cart).map( (key) => {
-		console.log('key', key);
-		return (<CartList key={key} quantity={this.props.cart[key]} item={this.currentItem(key)} />);
+		return (<CartList key={key} cart={this.props.cart} item={this.currentItem(key)}/>);
 	    })
 	}
     }
@@ -73,13 +56,11 @@ function mapState(state) {
 	cart: state.cart
     }
 }
+
 function mapDispatch(dispatch) {
     return {
-	subFromQuantity: () => dispatch(subFromQuantityThunk()),
-	addToQuantity: () => dispatch(addToQuantityThunk()),
-        fetchCart: () => dispatch(fetchCartThunk()),
-        addToCart: () => dispatch(addItemThunk())
+        fetchCart: () => dispatch(fetchCartThunk())
     }
 }
 
-export default connect(mapState,mapDispatch)(Cart);
+export default connect(mapState, mapDispatch)(Cart);

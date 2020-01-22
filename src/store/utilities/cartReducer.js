@@ -67,6 +67,11 @@ export const addToQuantityThunk = (id) => (dispatch) => {
     dispatch(resolvedActionObject);
 }
 
+export const subFromQuantityThunk = (id) => (dispatch) => {
+    let resolvedActionObject = subFromQuantity(id);
+    dispatch(resolvedActionObject);
+}
+
 export const fetchItemThunk = (item) => (dispatch) => {
     let resolvedActionObject = fetchItem(item);
     dispatch(resolvedActionObject);
@@ -79,12 +84,17 @@ const cartReducer = (state = {}, action) => {
         return state;
     case FETCH_ITEM:
         return state.item;
+    case ADD_QUANTITY:
+	return {...state, [action.item.id]: state[action.item.id] + 1};
+    case SUB_QUANTITY:
+	return {...state, [action.item.id]: state[action.item.id] - 1};
     case ADD_TO_CART:
 	if (state[action.item.id] === undefined) { //if does not exist in cart
 	    return {...state, [action.item.id]: Number(action.item.quantity)};//add to state
 	}
 	else {
-	    return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )} }
+	    return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )}}
+
     default:
         return state;
     }

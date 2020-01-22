@@ -23,6 +23,7 @@ constructor(props) {
     handleSubmit = (event) => {
 	this.setState({edit: false});
     }
+
     
     formRender() {
 	if(this.state.edit === true) {

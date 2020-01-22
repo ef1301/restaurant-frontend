@@ -23,3 +23,9 @@
 #checkout {
     float: right;
 }
+ 
+.image-in-card
+{
+    max-width: 250px;
+    max-height: 250px;
+}

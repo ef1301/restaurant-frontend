@@ -72,6 +72,7 @@ export const fetchItemThunk = (item) => (dispatch) => {
     dispatch(resolvedActionObject);
 }
 
+// State is an object
 const cartReducer = (state = {}, action) => {
     switch (action.type) {
     case FETCH_CART:

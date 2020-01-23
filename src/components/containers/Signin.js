@@ -14,11 +14,13 @@ class Signin extends Component {
             email : "",
             password : "",
             isLoggedIn : false,
-	    	newUser: false
+	    	error: ""
         }
 	};
 	componentDidMount() {
 		if(sessionStorage.getItem("byteMe")) {
+			this.props.history.push("/home");
+		} else {
 			this.props.history.push("/");
 		}
 	};
@@ -48,9 +50,12 @@ class Signin extends Component {
 				let decoded = jwt_decode(token);
 				sessionStorage.setItem("email", decoded.email);
 				sessionStorage.setItem("id", id);
-				this.props.history.push("/");
+				this.props.history.push("/home");
 			}
 		} catch(err) {
+			this.setState({
+				error: "Wrong email and/or password"
+			})
 			console.log(err);
 		}
 	};
@@ -117,6 +122,7 @@ class Signin extends Component {
 
 		<div id="Signin">		
 		{this.formRender()}
+		{this.state.error.length > 0 ? (<h3 style={{ color: "Red"}}>{this.state.error}</h3>) : (<div></div>)}
 	    </div>
 		</div>
 	);

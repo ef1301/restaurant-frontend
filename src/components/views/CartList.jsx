@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Cart.css';
 import { updateQuantityThunk } from "../../thunks";
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 class CartList extends Component {
 	constructor(props) {
 		super(props);

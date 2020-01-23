@@ -70,11 +70,12 @@ a:hover:not(.active) {
 .footer {
     width: 100%;
     position: relative;
-    height: 18%;
+    height: 17%;
     background-color: #85503f;
     display: flex;
-    min-height: 15%;
     flex-direction: column;
+    margin-top: -100px;
+    clear: both;
 }
 
 .footer h3 {

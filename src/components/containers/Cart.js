@@ -23,6 +23,7 @@ class Cart extends Component {
 	else {
 	    return Object.keys(this.props.cart).map( (key) => {
 		return (<CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key}/>);
+		
 	    })
 	}
     }
@@ -41,7 +42,13 @@ class Cart extends Component {
 			<div className="button">
 				<button><Link to="/Checkout">Proceed to checkout</Link></button>
 			</div>
-			<Footer />
+			<hr></hr>
+			<div className="footer-cart">
+				<h3>Byte Me</h3>
+				<p>8354 Jefferson St. Great Falls, MT 59404</p>
+				<p>(501) 619-8095</p>
+			</div>
+
 		</div>
 		
 	);

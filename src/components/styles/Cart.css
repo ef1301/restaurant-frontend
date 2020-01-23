@@ -1,7 +1,7 @@
 
 
 .cart {
-    margin-top: 1%;
+    margin-top: 0.1%;
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
@@ -26,11 +26,50 @@
     display: inline-block;
     background-color: #ececd2;
     margin-top: 2%;
-    height: auto;
+    height: 5%;
     padding: 2%;
 }
 
 .button {
+    float: right;
+    position: relative;
+    right:    5%;
+    bottom:   5%;
+}
+
+hr { 
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-width: 1px;
+    padding-bottom: 20%;
+    padding-top: 5%;
+    opacity: 0;
+}
+
+
+.footer-cart{
+    bottom: 0;
+    width: 100%;
+    background-color: #85503f;
+    clear: both;
+    position: relative;
+    height: 10%;
+    margin-top: -8px;
+}
+
+.footer-cart h3 {
+    color: #ececd2;
     text-align: center;
-    padding-bottom: 5%;
+    margin-bottom: -0.5%;
+    margin-left: 1%;
+}
+
+.footer-cart p {
+    color: #ececd2;
+    margin-left: 1%;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1em;
 }

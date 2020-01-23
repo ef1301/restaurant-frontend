@@ -4,12 +4,20 @@ import Footer from '../views/Footer';
 import '../styles/Cart.css';
 import CartList from '../views/CartList.jsx';
 import { Link } from 'react-router-dom';
-import { fetchCartThunk, addItemThunk } from "../../thunks";
+import { fetchCartThunk, addQuantityThunk, subQuantityThunk, removeFromCartThunk } from "../../thunks";
 import { connect } from 'react-redux'
 
 class Cart extends Component {
     componentDidMount() {
 	this.props.fetchCart();
+    }
+
+    increment = (id) => {
+	this.props.addQuantity(id);
+    }
+
+    decrement = (id) => {
+	this.props.subQuantity(id);
     }
 
     currentItem = (id) => {
@@ -22,7 +30,10 @@ class Cart extends Component {
 	}
 	else {
 	    return Object.keys(this.props.cart).map( (key) => {
-		return (<CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key}/>);
+		if(this.props.cart[key] === 0) {
+		    this.props.removeFromCart(key);
+		}
+		else { return <CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key} increment={this.increment} decrement={this.decrement}/>};
 	    })
 	}
     }
@@ -56,7 +67,10 @@ function mapState(state) {
 
 function mapDispatch(dispatch) {
     return {
-        fetchCart: () => dispatch(fetchCartThunk())
+        fetchCart: (cart) => dispatch(fetchCartThunk(cart)),
+	addQuantity: (id) => dispatch(addQuantityThunk(id)),
+	subQuantity: (id) => dispatch(subQuantityThunk(id)),
+	removeFromCart: (id) => dispatch(removeFromCartThunk(id))
     }
 }
 

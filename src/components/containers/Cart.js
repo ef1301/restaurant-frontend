@@ -9,12 +9,10 @@ import { connect } from 'react-redux'
 
 class Cart extends Component {
     componentDidMount() {
-	console.log('CART', this.props.cart);
 	this.props.fetchCart();
     }
-    
+
     currentItem = (id) => {
-	console.log('item', id);
 	return this.props.menu.find( (key) => key.id === Number(id))
     }
     
@@ -24,7 +22,7 @@ class Cart extends Component {
 	}
 	else {
 	    return Object.keys(this.props.cart).map( (key) => {
-		return (<CartList key={key} cart={this.props.cart} item={this.currentItem(key)}/>);
+		return (<CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key}/>);
 	    })
 	}
     }
@@ -33,16 +31,15 @@ class Cart extends Component {
 	return (
 		<div>
 		<Navbar />
-		
 		<div className="cart">
-		<h1> CART </h1>
-		<button id='checkout'><Link to="/Checkout">Proceed to checkout</Link></button>
+		
+		<h1>CART</h1>
+		<Link to="/Checkout" id="checkout-button">Proceed to checkout</Link>
 		<div className="cart-items">
 		{this.itemRender()}
 	    </div>
-	    
 		</div>
-		
+
 		<Footer />
 		</div>
 		

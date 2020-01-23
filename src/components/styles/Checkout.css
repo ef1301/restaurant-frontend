@@ -3,27 +3,27 @@
     margin-top: 15%;
     margin-left: auto;
     margin-right: auto;
-
+    margin-bottom: 10%;
 }
 
 .checkout h1 {
     font-size: 2em;
     text-align: center;
-    margin-bottom: 2%;
 }
 
 .checkout h2 {
+    margin-top: 1.5%;
     font-size: 1.5em;
 }
 
 .checkout button {
-    border-radius: 15%;
+    border-radius: 10%;
     font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
     color: white;
     text-decoration: none;
     background-color: #cd794b;
-    padding: 1%;
+    padding: .5% 1%;
     float: right;
 }
 
@@ -31,9 +31,28 @@
     background-color: #cb5762;
 }
 
+.checkout-items {
+    padding: .5%;
+    width: 95%;
+    border: medium dotted #cb5762;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .item-line {
+    padding: 1%;
+    border-bottom: thin solid #cb5762;
+}
+
+.item-line p {
+    text-align: left;
     font-size: 1.05em;
     display: inline;
     width: 50%;
 }
 
+span {
+    float: right;
+    margin-right: 2%;
+}

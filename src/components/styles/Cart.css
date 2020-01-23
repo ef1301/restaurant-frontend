@@ -3,17 +3,23 @@
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
-    margin-bottom: 5%;
     height: 35vw;
+    margin-bottom: 10%;
+}
+
+h1, h3, p {
+    color: #85503f;
 }
 
 .cart-items {
+    margin-top: 2%;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
 
+.cart-items button {
+    float: right;
 }
 
 .cart-card {
@@ -28,4 +34,19 @@
 
 #checkout{
     float: right;
+}
+
+#checkout-button {
+    float: right;
+    background-color: #cd794b;
+    margin-right: 2%;
+    padding: .5% 1%;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.15em;
+    box-shadow: 2px 2px grey;
+}
+
+#checkout-button:hover:not(.active) {
+    background-color: #cb5762;
 }

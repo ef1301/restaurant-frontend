@@ -152,7 +152,7 @@ class AccountInfo extends Component{
 	}
 	else {
 	    return(<div className="container">
-		   <h3>Account Information</h3>
+		   <h1>ACCOUNT INFORMATION</h1>
 
 		   <div id="info">
 		   <p>Name: <br/>

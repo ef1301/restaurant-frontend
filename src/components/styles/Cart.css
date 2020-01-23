@@ -7,6 +7,10 @@
     height: 35vw;
 }
 
+h1, h3, p {
+    color: #85503f;
+}
+
 .cart-items {
     text-align: center;
     margin-left: auto;

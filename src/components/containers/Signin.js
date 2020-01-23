@@ -73,7 +73,7 @@ class Signin extends Component {
 		    <Form.Control type="email" placeholder="Enter email" onChange={this.handleChange("email")} />
 		    <Form.Text className="text-muted">
 		    "We'll never share your email with anyone else."
-		</Form.Text>
+		</Form.Text>jwt
 		    </Form.Group>
 
 		    <Form.Group controlId="formBasicPassword">

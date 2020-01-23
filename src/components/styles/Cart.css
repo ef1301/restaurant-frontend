@@ -40,10 +40,11 @@ h1, h3, p {
     float: right;
     background-color: #cd794b;
     margin-right: 2%;
-    padding: .75%;
+    padding: .5% 1%;
     color: white;
     border-radius: 5px;
     font-size: 1.15em;
+    box-shadow: 2px 2px grey;
 }
 
 #checkout-button:hover:not(.active) {

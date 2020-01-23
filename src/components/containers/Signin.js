@@ -9,7 +9,7 @@ class Signin extends Component {
             email : "",
             password : "",
             redirect : false,
-	    newUser: false
+	    newUser: true
         }
     }
 

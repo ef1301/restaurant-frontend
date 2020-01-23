@@ -10,7 +10,7 @@ import Home from '../components/containers/Home';
 import AccountInfo from '../components/containers/AccountInfo';
 import Signin from '../components/containers/Signin';
 import Cart from '../components/containers/Cart'; 
-import Checkout from '../components/views/Checkout';
+import Checkout from '../components/containers/Checkout';
 
 class App extends Component {
     constructor(props) {

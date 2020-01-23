@@ -34,16 +34,21 @@ p {
 }
 
 .menu-card {
+    display: flex;  
     border-radius: 5px;
     display: inline-block;
     width: 25%;
     background-color: #ececd2;
-    margin-top: 1%;
     margin-bottom: 2%;
-    height: 100%;
+    height: auto;
     margin-right: 3%;
     margin-left: 3%;
-    padding: .5%;
+}
+
+.menu-items {
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
 }
 
 #menu-icon {

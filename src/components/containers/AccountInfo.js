@@ -28,7 +28,7 @@ class AccountInfo extends Component{
     formRender() {
 	if(this.state.edit === true) {
 	    return(
-		    <div>
+		    <div className="form">
 		    <Form>
 		    <Form.Row>
 		    <Form.Group as={Col} controlId="formGrid">

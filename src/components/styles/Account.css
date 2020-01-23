@@ -8,7 +8,6 @@
 }
 
 .container {
-
     width: 50%;
     color: #85503f;;
     display: inline;
@@ -44,4 +43,11 @@
 
 #info button:hover {
     background-color: #cb5762;
+}
+
+.form {
+    overflow: hidden;
+    margin-top: 1%;
+    padding: 1%;
+    maring-bottom: 2%;
 }

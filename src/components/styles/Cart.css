@@ -30,7 +30,6 @@
     padding: 2%;
 }
 
-.button {
-    text-align: center;
-    padding-bottom: 5%;
+#checkout{
+    float: right;
 }

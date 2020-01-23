@@ -14,16 +14,29 @@ function MenuItems(props) {
 
 		<div className="bottom-right">
 		  ${item.price}
-		  <input className="amount" type="number" name="quantity" min='0' max='99' onChange={props.handleChange}></input>
-		  <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" onClick={() => {
+
+		  <form onSubmit={(event) => {
 			if(props.quantity === 0 ){
 			    alert('Please enter a quantity!');
 			}
 			else {
+			    event.preventDefault();
+			    alert(`${props.quantity} ${item.item} has been added to cart!`);
+			    props.addToCart({id: item.id, quantity: props.quantity});
+			}
+		    }}>
+		  <input className="amount" type="number" name="quantity" min='0' max='99' onChange={props.handleChange}></input>
+		  <img id="cart-icon" src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart" onClick={(event) => {
+			if(props.quantity === 0 ){
+			    alert('Please enter a quantity!');
+			}
+			else {
+			    event.preventDefault();
 			    alert(`${props.quantity} ${item.item} has been added to cart!`);
 			    props.addToCart({id: item.id, quantity: props.quantity});
 			}
 		    }}/>
+		    </form>
 		</div>
 	      </div>
 	  ))}

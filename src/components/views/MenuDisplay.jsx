@@ -9,7 +9,7 @@ function MenuItems(props) {
 	  {props.menu.map( (item) => (
 	      <div className="menu-card" key={item.id}>
 		<h3>{item.item}</h3>
-		<img className="crop"src={item.imageUrl} alt={item.item}/>
+		<img className="crop" src={item.imageUrl} alt="food"/>
 		<p style={{textAlign:'left', marginLeft: '5%'}}><b><u>Description:</u></b><br/> {item.description}</p>
 
 		<div className="bottom-right">

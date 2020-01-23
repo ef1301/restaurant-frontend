@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 //Imports for components
 import Home from '../components/containers/Home';
@@ -52,10 +51,6 @@ function mapState(state) {
     return {
 	menu: state.menu
     };
-}
-
-function mapDispatch(dispatch) {
-    return { };
 }
 
 export default connect(mapState,null)(App);

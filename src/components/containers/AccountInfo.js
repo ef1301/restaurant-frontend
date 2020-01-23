@@ -3,7 +3,9 @@ import { Form, Col, Button } from 'react-bootstrap';
 import Navbar from '../views/Navbar';
 import Footer from '../views/Footer';
 import '../styles/Account.css';
+import { currentUserThunk } from '../../thunks';
 import ProgressBar from '../views/Reward';
+import { connect } from 'react-redux';
 
 class AccountInfo extends Component{
     constructor(props) {
@@ -11,8 +13,13 @@ class AccountInfo extends Component{
 	this.state = {
 	    edit: false
 	}
+	console.log('PROPS FOR ACCOUNT',this.props);
     }
 
+    componentDidMount() {
+	this.props.currentUser();
+    }
+    
     handleEdit = () => {
 	this.setState({edit: true});
     }
@@ -155,8 +162,8 @@ class AccountInfo extends Component{
 		   <h1>ACCOUNT INFORMATION</h1>
 
 		   <div id="info">
-		   <p>Name: <br/>
-		   Phone Number: <br/>
+		   <p>Name: {this.props.user.firstName} {this.props.user.lastName}<br/>
+		   Phone Number: {this.props.user.phoneNum}<br/>
 		   Address: 
 		   </p>
 		   <button className="edit" variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
@@ -179,9 +186,21 @@ class AccountInfo extends Component{
 		
 		<Footer />
 		</div>
-
 	);
     }
 };
 
-export default AccountInfo;
+function mapState(state){
+    return {
+	user: state.users
+    }
+}
+
+function mapDispatch(dispatch, ownProps) {
+    return {
+	currentUser: () => dispatch(currentUserThunk())
+    }
+}
+
+
+export default connect(mapState, mapDispatch)(AccountInfo);

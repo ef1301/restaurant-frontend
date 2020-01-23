@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Col, Button } from "react-bootstrap";
+import { Form, Col } from "react-bootstrap";
 import Navbar from "../views/Navbar";
 import Footer from "../views/Footer";
 import "../styles/Checkout.css";

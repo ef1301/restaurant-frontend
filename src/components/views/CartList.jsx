@@ -62,4 +62,4 @@ function mapDispatch(dispatch) {
 }
 
 
-export default connect(null, mapDispatch)(CartList);
+export default connect(mapState, mapDispatch)(CartList);

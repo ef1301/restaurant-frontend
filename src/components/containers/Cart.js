@@ -30,18 +30,17 @@ class Cart extends Component {
     render() {
 	return (
 		<div>
-			<Navbar />
-			
-			<div className="cart">
-			<h1> CART </h1>
-				<div className="cart-items">
-					{this.itemRender()}
-				</div>
-			</div>
-			<div className="button">
-				<button><Link to="/Checkout">Proceed to checkout</Link></button>
-			</div>
-			<Footer />
+		<Navbar />
+		<div className="cart">
+		
+		<h1>CART</h1>
+		<Link to="/Checkout" id="checkout-button">Proceed to checkout</Link>
+		<div className="cart-items">
+		{this.itemRender()}
+	    </div>
+		</div>
+
+		<Footer />
 		</div>
 		
 	);

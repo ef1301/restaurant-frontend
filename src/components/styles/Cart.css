@@ -1,9 +1,10 @@
+
+
 .cart {
-    margin-top: 15%;
+    margin-top: 1%;
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
-    margin-bottom: 5%;
     height: 35vw;
 }
 
@@ -13,7 +14,10 @@
     margin-right: auto;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
 
+#empty{
+    text-align: center;
 }
 
 .cart-card {
@@ -26,6 +30,7 @@
     padding: 2%;
 }
 
-#checkout {
-    float: right;
+.button {
+    text-align: center;
+    padding-bottom: 5%;
 }

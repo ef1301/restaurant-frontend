@@ -1,9 +1,12 @@
 h1 {
-   
+   padding-top: 20%;
+   text-align: center;
 }
 
+
+
 .container {
-    padding: 1%;  
+    padding: 20%;  
 }
 
 .rewards {

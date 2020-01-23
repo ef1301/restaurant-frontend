@@ -6,32 +6,27 @@ import { connect } from 'react-redux';
 class CartList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			id: this.props.identifier,
-			quantity: 0
-		}
-		console.log('PROPPPSSS', this.props);
-		console.log('STATEEEEEE', this.state);
+		// this.state = {
+		// 	id: this.props.identifier,
+		// 	quantity: 0
+		// }
 	}
 
 	componentDidMount() {
 	}
 
-	increment = () => {
-		let num = this.state.quantity + 1;
-		console.log(this.state.quantity);
-		console.log(num);
-		this.setState({ quantity: num });
-		/*console.log('increment', this.state);*/
-		this.props.updateQuantity(this.state);
+	// increment = () => {
+	// 	let num = this.state.quantity + 1;
+	// 	this.setState({ quantity: num });
+	// 	this.props.updateQuantity(this.state);
 
-	}
+	// }
 
-	decrement = () => {
-		let num = this.state.quantity - 1;
-		this.setState({ quantity: num });
-		this.props.updateQuantity(this.state);
-	}
+	// decrement = () => {
+	// 	let num = this.state.quantity - 1;
+	// 	this.setState({ quantity: num });
+	// 	this.props.updateQuantity(this.state);
+	// }
 
 
 
@@ -41,7 +36,7 @@ class CartList extends Component {
 				<p>{this.props.item.item} ${this.props.item.price}</p>
 				<img className="crop" src={this.props.item.imageUrl} alt={this.props.item.item} />
 				<p>Quantity: {this.props.cart[this.props.item.id]}</p>
-				<button onClick={this.increment}> + </button>
+				<button onClick={() => this.props.increment(this.props.item.id)}> + </button>
 				<button> - </button>
 			</div>
 		);
@@ -57,9 +52,9 @@ function mapState(state) {
 
 function mapDispatch(dispatch) {
 	return {
-		updateQuantity: (item) => dispatch(updateQuantityThunk(item)),
+		// updateQuantity: (item) => dispatch(updateQuantityThunk(item)),
 	}
 }
 
 
-export default connect(null, mapDispatch)(CartList);
+export default connect(mapState, mapDispatch)(CartList);

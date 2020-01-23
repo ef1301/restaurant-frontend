@@ -1,3 +1,5 @@
+import { CommentActions } from "semantic-ui-react";
+
 //Action types, hoisted to the top
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
@@ -29,12 +31,14 @@ function removeFromCart(item) {
     }
 }
 
-function updateQuantity(item) {
+function updateQuantity(id) {
     return {
 	type: UPDATE_QUANTITY,
-	item
+	id
     }
 }
+
+
 
 /*function addToQuantity(id){
     return {
@@ -63,8 +67,8 @@ export const fetchCartThunk = (cart) => (dispatch) => {
     dispatch(resolvedActionObject);
 };
 
-export const updateQuantityThunk = (item) => (dispatch) => {
-    let resolvedActionObject = updateQuantity(item);
+export const updateQuantityThunk = (id) => (dispatch) => {
+    let resolvedActionObject = updateQuantity(id);
     dispatch(resolvedActionObject);
 }
 
@@ -89,12 +93,7 @@ const cartReducer = (state = {}, action) => {
 	}
 	return {...state, [action.item.id]: state[action.item.id] + Number(action.item.quantity )}
     case UPDATE_QUANTITY:
-	return Object.keys(state).map( (item) => {
-	    if (item === action.item.id) {
-		return Object.assign({}, state, action.item);
-	    }
-	    else return state;
-	})
+            return { ...state, [action.id]: state[action.id] + 1 }
     default:
 	return state;
     }

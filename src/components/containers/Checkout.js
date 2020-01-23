@@ -17,7 +17,6 @@ class Checkout extends Component {
     }
 
     currentItem = (id) => {
-	console.log('item', id);
 	return this.props.menu.find( (key) => key.id === Number(id))
     }
 
@@ -29,11 +28,11 @@ class Checkout extends Component {
 	    return Object.keys(this.props.cart).map( (key) => <CheckoutList cartItem={this.currentItem(key)} quantity={this.props.cart[key]} />)
 	}
     }
-    
+
     handleChange = (event) => {
 	this.setState({ [event.target.name]: event.target.value });
     }
-    
+
     formRender() {
 	return (
 		<Form>
@@ -140,13 +139,12 @@ class Checkout extends Component {
     }
 
     render() {
-	console.log(this.props.cart);
 	return (
 		<div>
 		<Navbar />
 		<div className="checkout">
 		<h1>Checkout</h1>
-		<h2>Your Order</h2>		
+		<h2>Your Order</h2>
 		<div className='checkout-items'>
 		{this.itemOrderDisplay()}
 	    </div>

@@ -31,6 +31,7 @@
     background-color: #cd794b;
     padding: .25%;
     font-family: 'Raleway', sans-serif;
+    z-index: 5;
 }
 
 .header h1 {

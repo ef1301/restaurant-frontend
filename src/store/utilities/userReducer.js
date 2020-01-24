@@ -7,6 +7,7 @@ const FETCH_USER = 'FETCH_USER';
 const CURRENT_USER = 'CURRENT_USER';
 const UPDATE_USER = 'UPDATE_USER';
 
+
 export const fetchUserThunk = (fetchedEmail) => (dispatch) => {
     axios.get("https://bytemee.herokuapp.com/api/users")
 	.then(response => response.data)

@@ -5,6 +5,7 @@ export const FETCH_CART = 'FETCH_CART';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 
+export const POST_ORDER = 'POST_ORDER';
 //Action creator
 function fetchCart(cart) {
     return {
@@ -42,6 +43,13 @@ function subQuantity(id) {
     }
 }
 
+function postOrder(order) {
+    return {
+	type: POST_ORDER,
+	order
+    }
+}
+
 //Thunks
 export const addItemThunk = (item) => (dispatch) => {
     let resolvedActionObject = addToCart(item);
@@ -65,6 +73,11 @@ export const subQuantityThunk = (id) => (dispatch) => {
 
 export const removeFromCartThunk = (id) => (dispatch) => {
     let resolvedActionObject = removeFromCart(id);
+    dispatch(resolvedActionObject);
+}
+
+export const portOrder = (order) => (dispatch) => {
+    let resolvedActionObject = postOrder(order);
     dispatch(resolvedActionObject);
 }
 
@@ -92,6 +105,8 @@ const cartReducer = (state = {}, action) => {
 	    return state;
 	}
 	return { ...state, [action.id]: state[action.id] - 1 }
+    case POST_ORDER:
+	return state;
     default:
 	return state;
     }

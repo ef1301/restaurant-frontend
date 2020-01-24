@@ -17,7 +17,7 @@ class Navbar extends Component{
 	    <div id="Byte-me">
 	    <h1 className="company"><img id="logo" src="https://img.icons8.com/bubbles/100/000000/meal.png" alt="company"/><b>BYTE ME</b></h1></div>
 	    <div className="navbar">
-            <Link to="/"><img id="house-icon" src="https://img.icons8.com/bubbles/50/000000/order-delivered.png" style={{height: '2em', marginTop: '-5%'}} alt="House-icon"/>Home</Link>
+            <Link to="/home"><img id="house-icon" src="https://img.icons8.com/bubbles/50/000000/order-delivered.png" style={{height: '2em', marginTop: '-5%'}} alt="House-icon"/>Home</Link>
 	    
             <div id="right-align">
 	        <Link to="/accountInfo">Account</Link>

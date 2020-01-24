@@ -157,7 +157,15 @@ class Checkout extends Component {
 	    </div>
 
 		<h4> Total Price: </h4>
+        <p className="claim">Apply reward</p>
+        <select name="carlist" form="carform">
+            <option value="none">No Reward</option>
+            <option value="reward1">10% off</option>
+            
+</select>
+        
 		<button>Place Order</button>
+        <button className="rebut">Reward</button>
 		</div>
 		<Footer />
 		</div>

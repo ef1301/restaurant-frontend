@@ -56,3 +56,9 @@ span {
     float: right;
     margin-right: 2%;
 }
+.claim{
+    text-align: right;
+}
+select{
+    float: right;
+}

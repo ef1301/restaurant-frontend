@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Form, Col, Button } from "react-bootstrap";
+import { Form, Col } from "react-bootstrap";
 import Navbar from "../views/Navbar";
+import Footer from "../views/Footer";
 import "../styles/Checkout.css";
 import CheckoutList from '../views/CheckoutList.jsx'
 import { fetchCartThunk } from '../../thunks';
@@ -20,6 +21,14 @@ class Checkout extends Component {
 	return this.props.menu.find( (key) => key.id === Number(id))
     }
 
+    itemOrderDisplay = () => {
+	if(Object.keys(this.props.cart).length === 0) {
+	    return <p>No items in your cart.</p>
+	}
+	else {
+	    return Object.keys(this.props.cart).map( (key) => <CheckoutList cartItem={this.currentItem(key)} quantity={this.props.cart[key]} />)
+	}
+    }
     
     handleChange = (event) => {
 	this.setState({ [event.target.name]: event.target.value });
@@ -137,20 +146,20 @@ class Checkout extends Component {
 		<Navbar />
 		<div className="checkout">
 		<h1>Checkout</h1>
-		<h2>Your Order</h2>
-		
+		<h2>Your Order</h2>		
 		<div className='checkout-items'>
-		{Object.keys(this.props.cart).map( (key) => <CheckoutList cartItem={this.currentItem(key)} quantity={this.props.cart[key]} />)}
+		{this.itemOrderDisplay()}
 	    </div>
 
-	    <div className="form">
+	    	<h2>Your Information</h2>
+		<div className="form">
 		{this.formRender()}
 	    </div>
 
 		<h4> Total Price: </h4>
 		<button>Place Order</button>
-		
 		</div>
+		<Footer />
 		</div>
 	);
     }

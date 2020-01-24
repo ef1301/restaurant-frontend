@@ -5,7 +5,7 @@ function CheckoutList(props) {
     console.log('CARTLISTPROPS',props);
     return (
 	<div className="item-line">
-	  <p>{props.cartItem.item} Quantity: {props.quantity}</p>
+	  <p>{props.cartItem.item} <span>Quantity: {props.quantity}</span></p>
 	</div>
     );
 }

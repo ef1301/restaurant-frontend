@@ -1,12 +1,27 @@
 /*
 fetching/updating the account info, fetching and updating the payment_info(locally as a state) [the address, card #, cellphone #], fetching the points and updating points -> user reducer
 */
+import axios from 'axios';
 
 const FETCH_USER = 'FETCH_USER';
+const CURRENT_USER = 'CURRENT_USER';
 const UPDATE_USER = 'UPDATE_USER';
 
-export const fetchUserThunk = () => (dispatch) => {
-  //the axios.get call would go here to fetch the user  so that we can map them to JSX elements
+export const fetchUserThunk = (fetchedEmail) => (dispatch) => {
+    axios.get("https://bytemee.herokuapp.com/api/users")
+	.then(response => response.data)
+	.then(users => users.map( (user) => {
+	    if(user.email === fetchedEmail) {
+		return dispatch(fetchUser(user));
+	    }
+	})
+	)
+	.catch(err => console.log(err))
+}
+
+export const currentUserThunk = (user) => (dispatch) => {
+    let resolvedActionObject = currentUser();
+    dispatch(resolvedActionObject);
 }
 
 export const updateUserThunk = (user) => (dispatch) => {
@@ -21,6 +36,13 @@ function fetchUser(user) {
     }
 }
 
+function currentUser(user) {
+    return {
+	type: CURRENT_USER,
+	user
+    }
+}
+
 function updateUser(user) {
     return {
 	type: UPDATE_USER,
@@ -28,10 +50,13 @@ function updateUser(user) {
     }
 }
 
-function userReducer(state = [], action) {
+function userReducer(state = {}, action) {
     switch(action.type) {
     case FETCH_USER:
+	console.log(action);
 	return action.user;
+    case CURRENT_USER:
+	return state;
     case UPDATE_USER:
 	return state.map( (item) => {
 	    if(item.id === action.user.id)

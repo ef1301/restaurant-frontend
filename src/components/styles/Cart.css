@@ -3,8 +3,8 @@
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
-    height: 35vw;
-    margin-bottom: 10%;
+    height: 85vw;
+    margin-bottom: 15%;
 }
 
 h1, h3, p {
@@ -12,10 +12,12 @@ h1, h3, p {
 }
 
 .cart-items {
-    margin-top: 2%;
+    position: relative;
+    margin-top: 5%;
     text-align: center;
     background-color: #F4F1F2;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+
 }
 
 .cart-items button {

@@ -1,7 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 .navbar {
     font-weight: bold;
     font-size: 1.05em;
-    width: 100%;
     background-color: #cd794b;
     padding: 0;
     margin: .10%;

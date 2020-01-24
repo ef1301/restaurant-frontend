@@ -20,6 +20,10 @@ class Cart extends Component {
 	this.props.subQuantity(id);
     }
 
+    removeItem = (id) => {
+	this.props.removeFromCart(id);
+    }
+    
     currentItem = (id) => {
 	return this.props.menu.find( (key) => key.id === Number(id))
     }
@@ -33,9 +37,8 @@ class Cart extends Component {
 		if(this.props.cart[key] === 0) {
 		    this.props.removeFromCart(key);
 		}
-		else { return <CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key} increment={this.increment} decrement={this.decrement}/>};
-	    })
-	}
+		else { return <CartList key={key} item={this.currentItem(key)} cart={this.props.cart} identifier={key} increment={this.increment} decrement={this.decrement} remove={this.removeItem}/>;}
+	    })}
     }
 
     render() {

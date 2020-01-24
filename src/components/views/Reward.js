@@ -1,6 +1,5 @@
 import '../styles/Reward.css';
 import React, {Component} from 'react';
-import { fetchPointsThunk } from '../../thunks';
 import { connect } from 'react-redux';
 
 class ProgressBarExample extends Component{
@@ -12,7 +11,7 @@ class ProgressBarExample extends Component{
     }
 
     componentDidMount() {
-	//this.props.fetchPoints();
+
     }
     
     render(){
@@ -37,15 +36,9 @@ const Filler = (props) => {
     return <div className="filler" style={{ width: `${props.percentage}%` }} />
 }
 
-function mapState(state) {
+function mapState(state){
     return {
 	reward: state.reward
-    }
-}
-
-function mapDispatch(dispatch, ownProps) {
-    return {
-	fetchPoints: () => dispatch(fetchPointsThunk())
     }
 }
 

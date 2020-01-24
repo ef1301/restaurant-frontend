@@ -4,9 +4,9 @@ fetching/updating the account info, fetching and updating the payment_info(local
 import axios from 'axios';
 
 const FETCH_USER = 'FETCH_USER';
+const FETCH_PAYMENT = 'FETCH_PAYMENT';
 const CURRENT_USER = 'CURRENT_USER';
 const UPDATE_USER = 'UPDATE_USER';
-
 
 export const fetchUserThunk = (fetchedEmail) => (dispatch) => {
     axios.get("https://bytemee.herokuapp.com/api/users")
@@ -18,6 +18,15 @@ export const fetchUserThunk = (fetchedEmail) => (dispatch) => {
 	})
 	)
 	.catch(err => console.log(err))
+}
+
+export const fetchPaymentThunk = (id) => (dispatch) => {
+    axios.get(`https://bytemee.herokuapp.com/api/users/${id}/payment`)
+	.then(response => response.data)
+	.then(userinfo => {
+	    //console.log(userinfo);
+	    dispatch(fetchPayment(userinfo[0]));})
+    	.catch(err => console.log(err))
 }
 
 export const currentUserThunk = (user) => (dispatch) => {
@@ -33,6 +42,13 @@ export const updateUserThunk = (user) => (dispatch) => {
 function fetchUser(user) {
     return {
 	type: FETCH_USER,
+	user
+    }
+}
+
+function fetchPayment(user) {
+    return {
+	type: FETCH_PAYMENT,
 	user
     }
 }
@@ -64,6 +80,8 @@ function userReducer(state = {}, action) {
 		return Object.assign( {}, item, action.order);
 	    else return item;
 	});
+    case FETCH_PAYMENT:
+	return Object.assign({}, state, action.user);
     default:
 	return state;
 	

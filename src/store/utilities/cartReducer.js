@@ -5,7 +5,7 @@ export const FETCH_CART = 'FETCH_CART';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 
-export const POST_ORDER = 'POST_ORDER';
+//export const POST_ORDER = 'POST_ORDER';
 //Action creator
 function fetchCart(cart) {
     return {
@@ -43,12 +43,12 @@ function subQuantity(id) {
     }
 }
 
-function postOrder(order) {
+/*function postOrder(order) {
     return {
 	type: POST_ORDER,
 	order
     }
-}
+}*/
 
 //Thunks
 export const addItemThunk = (item) => (dispatch) => {
@@ -76,10 +76,15 @@ export const removeFromCartThunk = (id) => (dispatch) => {
     dispatch(resolvedActionObject);
 }
 
-export const portOrder = (order) => (dispatch) => {
-    let resolvedActionObject = postOrder(order);
+/*export const portOrderThunk = () => (dispatch) => {
+    let data = axios.post("https://bytemee.herokuapp.com/api/order");
+    let id = data["id"];
+    console.log(id);
+    Object.keys
+    let addItem = axios.post("https://bytemee.herokuapp.com/api/order/item");
+    let resolveActionObject = postOrder(id);
     dispatch(resolvedActionObject);
-}
+}*/
 
 // State is an object
 const cartReducer = (state = {}, action) => {
@@ -105,8 +110,8 @@ const cartReducer = (state = {}, action) => {
 	    return state;
 	}
 	return { ...state, [action.id]: state[action.id] - 1 }
-    case POST_ORDER:
-	return state;
+    //case POST_ORDER:
+	
     default:
 	return state;
     }

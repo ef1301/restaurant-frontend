@@ -51,7 +51,7 @@ const rewardReducer = (state = 0, action) => {
     switch(action.type) {
     case FETCH_POINTS:
 	console.log('POINTS: ', action.user.points);
-	return action.user.points;
+	return Number(action.user.points);
     case APPLY_REWARD:
 	return state - action.reward;
     case APPLY_POINTS:

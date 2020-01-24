@@ -3,7 +3,7 @@ import { Form, Col, Button } from 'react-bootstrap';
 import Navbar from '../views/Navbar';
 import Footer from '../views/Footer';
 import '../styles/Account.css';
-import { currentUserThunk } from '../../thunks';
+import { currentUserThunk, fetchPointsThunk, fetchPaymentThunk } from '../../thunks';
 import ProgressBar from '../views/Reward';
 import { connect } from 'react-redux';
 
@@ -12,13 +12,15 @@ class AccountInfo extends Component{
 	super(props);
 	this.state = {
 	    edit: false,
-	    reward: ''
+	    reward: 0
 	}
 	console.log('PROPS FOR ACCOUNT',this.props);
     }
 
     componentDidMount() {
 	this.props.currentUser();
+	console.log('POINTS');
+	this.props.fetchPoints();
     }
 
     handleReward = (event) => {
@@ -168,8 +170,8 @@ class AccountInfo extends Component{
 		   <h1>ACCOUNT INFORMATION</h1>
 
 		   <div id="info">
-		   <p>Name: {this.props.user.firstName} {this.props.user.lastName}<br/>
-		   Phone Number: {this.props.user.phoneNum}<br/>
+		   <p>Name: {this.props.users.firstName} {this.props.users.lastName}<br/>
+		   Phone Number: {this.props.users.phoneNum}<br/>
 		   Address: 
 		   </p>
 		   <button className="edit" variant="primary" type="button" onClick={this.handleEdit}>Edit</button>
@@ -205,13 +207,17 @@ class AccountInfo extends Component{
 
 function mapState(state){
     return {
-	user: state.users
+	users: state.users,
+	reward: state.reward
     }
 }
 
 function mapDispatch(dispatch, ownProps) {
     return {
-	currentUser: () => dispatch(currentUserThunk())
+	currentUser: () => dispatch(currentUserThunk()),
+	fetchPoints: () => dispatch(fetchPointsThunk()),
+	fetchPayment: () => dispatch(fetchPaymentThunk())
+	
     }
 }
 

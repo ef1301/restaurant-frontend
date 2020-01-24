@@ -52,3 +52,24 @@
     padding: 1%;
     maring-bottom: 2%;
 }
+
+.rewards {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rewards button {
+    margin-right: 2%;
+    font-size: 1em;
+    border-radius: 10%;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: white;
+    padding: 1% 2%;
+    text-decoration: none;
+    background-color: #cd794b;
+}
+
+.rewards button:hover {
+    background-color: #cb5762;
+}

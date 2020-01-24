@@ -11,13 +11,19 @@ class AccountInfo extends Component{
     constructor(props) {
 	super(props);
 	this.state = {
-	    edit: false
+	    edit: false,
+	    reward: ''
 	}
 	console.log('PROPS FOR ACCOUNT',this.props);
     }
 
     componentDidMount() {
 	this.props.currentUser();
+    }
+
+    handleReward = (event) => {
+	event.preventDefault();
+	this.setState({reward: event.target.value});
     }
     
     handleEdit = () => {
@@ -182,8 +188,15 @@ class AccountInfo extends Component{
 		{this.formRender()}
 	    	<h3>Rewards</h3>
 		<ProgressBar />
+		<p>Current goal: {this.state.reward}</p>
+	    	<div className="rewards">
+		<button onClick={this.handleReward} value='5%'> 5%</button>
+		<button onClick={this.handleReward} value='10%'>10%</button>
+		<button onClick={this.handleReward} value='15%'>15%</button>
+		<button onClick={this.handleReward} value='25%'>25%</button>
 		</div>
-		
+		</div>
+
 		<Footer />
 		</div>
 	);

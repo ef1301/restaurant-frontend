@@ -202,7 +202,15 @@ class Checkout extends Component {
             {this.formRender()}
             </div>
 
-            <h4> Total Price: </h4>
+        <h4> Total Price: $ 19.19</h4>
+        <div class="columns">
+            <ul class="price">
+                <li class="grey">Base : $ 10.5</li>
+                <li>Service Fee : $ 2.00</li>
+                <li>Deliver Fee : $ 5.00</li>
+                <li>Taxes and Fees : $ 1.69</li>
+            </ul>
+        </div>
             <p className="claim">Apply reward</p>
             <select name="carlist" form="carform">
                 <option value="none">No Reward</option>

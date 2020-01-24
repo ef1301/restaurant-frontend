@@ -118,7 +118,7 @@ class Signin extends Component {
 	return(
 		<div>
 		<div id="header">
-		<h1 className="title">Bytemee</h1>
+		<h1 className="title">Byte me</h1>
 		</div>
 		<div id="Signin">		
 		{this.formRender()}

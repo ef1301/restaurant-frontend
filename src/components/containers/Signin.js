@@ -72,7 +72,7 @@ class Signin extends Component {
     formRender() {
 	// if(this.state.newUser === false) {
 	return(
-		<div id="Signin">
+		<form id="Signin" onSubmit={this.handleSubmit}>
 		<h2 style={{marginBottom: '2%'}}>Sign In</h2>
 		<Form.Group controlId="formBasicEmail">
 		<Form.Label>Email address</Form.Label>
@@ -88,7 +88,7 @@ class Signin extends Component {
 		</Form.Group>
 		<Button variant="primary" type="submit" onClick={this.handleSubmit}>Sign In</Button>
 		{/* <a id="change" style={{backgroundColor: '#ececd2'}} onClick={this.handleUser}>Sign up?</a> */}
-	    </div>
+	    </form>
 	);
 	//}
 	// else {
